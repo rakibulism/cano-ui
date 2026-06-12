@@ -171,6 +171,20 @@
     ]
   },
   {
+    "name": "country-input",
+    "title": "Country Input",
+    "description": "A searchable country combobox with emoji flags and a built-in ISO list with dial codes.",
+    "category": "input",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "button",
+      "command",
+      "popover"
+    ]
+  },
+  {
     "name": "data-table-pro",
     "title": "Data Table Pro",
     "description": "A production-ready data table with sorting, filtering, column visibility, row selection, and pagination built on TanStack Table.",
@@ -339,6 +353,19 @@
     "registryDependencies": []
   },
   {
+    "name": "language-search",
+    "title": "Language Search",
+    "description": "A searchable language list with country flags, native names, and single selection.",
+    "category": "input",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "command",
+      "country-input"
+    ]
+  },
+  {
     "name": "notification-center",
     "title": "Notification Center",
     "description": "A bell-triggered notification popover with unread badge, all/unread tabs, and mark-all-read.",
@@ -396,6 +423,22 @@
     ],
     "registryDependencies": [
       "button"
+    ]
+  },
+  {
+    "name": "phone-number-input",
+    "title": "Phone Number Input",
+    "description": "A phone field with a searchable flag + dial-code picker and E.164 output.",
+    "category": "input",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "button",
+      "command",
+      "input",
+      "popover",
+      "country-input"
     ]
   },
   {

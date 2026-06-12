@@ -1,0 +1,19 @@
+{
+  "name": "phone-number-input",
+  "title": "Phone Number Input",
+  "description": "A phone field with a searchable flag + dial-code picker and E.164 output.",
+  "category": "input",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button",
+    "command",
+    "input",
+    "popover",
+    "country-input"
+  ],
+  "files": [
+    "registry/ui/phone-number-input.tsx"
+  ]
+}

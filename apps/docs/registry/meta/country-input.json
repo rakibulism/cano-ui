@@ -1,0 +1,17 @@
+{
+  "name": "country-input",
+  "title": "Country Input",
+  "description": "A searchable country combobox with emoji flags and a built-in ISO list with dial codes.",
+  "category": "input",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button",
+    "command",
+    "popover"
+  ],
+  "files": [
+    "registry/ui/country-input.tsx"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "language-search",
+  "title": "Language Search",
+  "description": "A searchable language list with country flags, native names, and single selection.",
+  "category": "input",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "command",
+    "country-input"
+  ],
+  "files": [
+    "registry/ui/language-search.tsx"
+  ]
+}
