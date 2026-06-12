@@ -1,0 +1,9 @@
+{
+  "name": "search-results",
+  "title": "Search Results",
+  "description": "A grouped search result list with match highlighting, icons, trailing meta, and an empty state.",
+  "category": "navigation",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": ["registry/ui/search-results.tsx"]
+}

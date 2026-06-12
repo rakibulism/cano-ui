@@ -46,14 +46,14 @@ Because every item is shadcn registry-item compatible, this also works:
 npx shadcn add https://cano-ui.vercel.app/r/data-table-pro.json
 ```
 
-## Components (33 and counting)
+## Components (36 and counting)
 
 | Category | Components |
 |---|---|
 | Layout | App Shell, Settings Layout, Kanban Board, Drawer, Bottom Sheet |
 | Data | Data Table Pro, Team Members Table, Activity Feed, Invoice Table, API Key Manager |
-| Navigation | Command Palette |
-| Input | Combobox Filters, Date Range Picker, File Dropzone, Button Pro, Button Group, Slider Field |
+| Navigation | Command Palette, Search Results |
+| Input | Combobox Filters, Date Range Picker, File Dropzone, Button Pro, Button Group, Slider Field, Search Bar, Kbd |
 | Flow | Onboarding Stepper |
 | Auth | Auth Forms |
 | Dashboard | Stats Grid, Usage Meter, Integration Cards |

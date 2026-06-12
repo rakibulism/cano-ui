@@ -297,6 +297,14 @@
     ]
   },
   {
+    "name": "kbd",
+    "title": "Kbd",
+    "description": "Keyboard key caps for shortcut hints — single keys, chords with separators, and key sequences.",
+    "category": "input",
+    "dependencies": [],
+    "registryDependencies": []
+  },
+  {
     "name": "notification-center",
     "title": "Notification Center",
     "description": "A bell-triggered notification popover with unread badge, all/unread tabs, and mark-all-read.",
@@ -356,6 +364,27 @@
     "registryDependencies": [
       "tooltip"
     ]
+  },
+  {
+    "name": "search-bar",
+    "title": "Search Bar",
+    "description": "A search input with icon, clear button, loading state, and a global Cmd/Ctrl shortcut that focuses it.",
+    "category": "input",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "input",
+      "kbd"
+    ]
+  },
+  {
+    "name": "search-results",
+    "title": "Search Results",
+    "description": "A grouped search result list with match highlighting, icons, trailing meta, and an empty state.",
+    "category": "navigation",
+    "dependencies": [],
+    "registryDependencies": []
   },
   {
     "name": "settings-layout",

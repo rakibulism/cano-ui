@@ -1,0 +1,9 @@
+{
+  "name": "search-bar",
+  "title": "Search Bar",
+  "description": "A search input with icon, clear button, loading state, and a global Cmd/Ctrl shortcut that focuses it.",
+  "category": "input",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["input", "kbd"],
+  "files": ["registry/ui/search-bar.tsx"]
+}

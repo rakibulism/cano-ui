@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "kbd",
+  "type": "registry:component",
+  "title": "Kbd",
+  "description": "Keyboard key caps for shortcut hints — single keys, chords with separators, and key sequences.",
+  "category": "input",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "components/ui/kbd.tsx",
+      "content": "import * as React from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\nexport interface KbdProps extends React.ComponentProps<\"kbd\"> {\n  size?: \"sm\" | \"default\"\n}\n\n/** A single keyboard key, e.g. ⌘ or K. */\nexport function Kbd({ size = \"default\", className, ...props }: KbdProps) {\n  return (\n    <kbd\n      data-slot=\"kbd\"\n      className={cn(\n        \"inline-flex items-center justify-center rounded-sm border border-b-2 bg-muted font-sans font-medium text-muted-foreground\",\n        size === \"default\"\n          ? \"h-5 min-w-5 px-1 text-[11px]\"\n          : \"h-4 min-w-4 px-0.5 text-[10px]\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nexport interface KbdGroupProps extends React.ComponentProps<\"span\"> {\n  /** Keys rendered in order, e.g. [\"⌘\", \"K\"] or [\"g\", \"d\"]. */\n  keys: string[]\n  /** Text between keys: \"+\" for chords, \"then\" for sequences. */\n  separator?: string\n  size?: \"sm\" | \"default\"\n}\n\n/** A chord or sequence of keys, e.g. ⌘ + K or g then d. */\nexport function KbdGroup({\n  keys,\n  separator,\n  size = \"default\",\n  className,\n  ...props\n}: KbdGroupProps) {\n  return (\n    <span\n      data-slot=\"kbd-group\"\n      className={cn(\"inline-flex items-center gap-1\", className)}\n      {...props}\n    >\n      {keys.map((key, i) => (\n        <React.Fragment key={`${key}-${i}`}>\n          {i > 0 && separator ? (\n            <span className=\"text-xs text-muted-foreground\">{separator}</span>\n          ) : null}\n          <Kbd size={size}>{key}</Kbd>\n        </React.Fragment>\n      ))}\n    </span>\n  )\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

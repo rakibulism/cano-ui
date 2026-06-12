@@ -1,0 +1,9 @@
+{
+  "name": "kbd",
+  "title": "Kbd",
+  "description": "Keyboard key caps for shortcut hints — single keys, chords with separators, and key sequences.",
+  "category": "input",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": ["registry/ui/kbd.tsx"]
+}

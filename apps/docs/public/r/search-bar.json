@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "search-bar",
+  "type": "registry:component",
+  "title": "Search Bar",
+  "description": "A search input with icon, clear button, loading state, and a global Cmd/Ctrl shortcut that focuses it.",
+  "category": "input",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "input",
+    "kbd"
+  ],
+  "files": [
+    {
+      "path": "components/ui/search-bar.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { Loader2, Search, X } from \"lucide-react\"\n\nimport { cn } from \"@/lib/utils\"\nimport { Input } from \"@/components/ui/input\"\nimport { KbdGroup } from \"@/components/ui/kbd\"\n\nexport interface SearchBarProps\n  extends Omit<React.ComponentProps<\"input\">, \"value\" | \"onChange\" | \"size\"> {\n  value?: string\n  defaultValue?: string\n  onValueChange?: (value: string) => void\n  /** Shows a spinner in place of the clear button. */\n  loading?: boolean\n  /**\n   * Shortcut hint shown while empty, e.g. [\"⌘\", \"K\"]. The last key is also\n   * registered globally with Cmd/Ctrl to focus the input.\n   */\n  shortcut?: string[]\n  containerClassName?: string\n}\n\nexport function SearchBar({\n  value,\n  defaultValue = \"\",\n  onValueChange,\n  loading = false,\n  shortcut,\n  placeholder = \"Search…\",\n  containerClassName,\n  className,\n  ...props\n}: SearchBarProps) {\n  const inputRef = React.useRef<HTMLInputElement>(null)\n  const [internal, setInternal] = React.useState(defaultValue)\n  const current = value ?? internal\n\n  function setValue(next: string) {\n    setInternal(next)\n    onValueChange?.(next)\n  }\n\n  React.useEffect(() => {\n    if (!shortcut?.length) return\n    const key = shortcut[shortcut.length - 1].toLowerCase()\n    function onKeyDown(e: KeyboardEvent) {\n      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === key) {\n        e.preventDefault()\n        inputRef.current?.focus()\n      }\n    }\n    window.addEventListener(\"keydown\", onKeyDown)\n    return () => window.removeEventListener(\"keydown\", onKeyDown)\n  }, [shortcut])\n\n  return (\n    <div\n      data-slot=\"search-bar\"\n      className={cn(\"relative w-full\", containerClassName)}\n    >\n      <Search\n        aria-hidden=\"true\"\n        className=\"pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-muted-foreground\"\n      />\n      <Input\n        ref={inputRef}\n        type=\"search\"\n        role=\"searchbox\"\n        value={current}\n        onChange={(e) => setValue(e.target.value)}\n        placeholder={placeholder}\n        className={cn(\n          \"pl-9 pr-9 [&::-webkit-search-cancel-button]:appearance-none\",\n          className\n        )}\n        {...props}\n      />\n      <span className=\"absolute top-1/2 right-2 flex -translate-y-1/2 items-center\">\n        {loading ? (\n          <Loader2\n            aria-label=\"Searching\"\n            className=\"size-4 animate-spin text-muted-foreground\"\n          />\n        ) : current ? (\n          <button\n            type=\"button\"\n            aria-label=\"Clear search\"\n            onClick={() => {\n              setValue(\"\")\n              inputRef.current?.focus()\n            }}\n            className=\"rounded-sm p-0.5 text-muted-foreground transition-colors hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none\"\n          >\n            <X className=\"size-4\" aria-hidden=\"true\" />\n          </button>\n        ) : shortcut?.length ? (\n          <KbdGroup keys={shortcut} aria-hidden=\"true\" />\n        ) : null}\n      </span>\n    </div>\n  )\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}
