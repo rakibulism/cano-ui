@@ -1,0 +1,9 @@
+{
+  "name": "button-group",
+  "title": "Button Group",
+  "description": "A segmented control wrapper that fuses adjacent buttons, horizontal or vertical, with proper focus rings.",
+  "category": "input",
+  "dependencies": [],
+  "registryDependencies": ["button"],
+  "files": ["registry/ui/button-group.tsx"]
+}

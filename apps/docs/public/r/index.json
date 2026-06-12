@@ -90,6 +90,28 @@
     "registryDependencies": []
   },
   {
+    "name": "button-group",
+    "title": "Button Group",
+    "description": "A segmented control wrapper that fuses adjacent buttons, horizontal or vertical, with proper focus rings.",
+    "category": "input",
+    "dependencies": [],
+    "registryDependencies": [
+      "button"
+    ]
+  },
+  {
+    "name": "button-pro",
+    "title": "Button Pro",
+    "description": "A drop-in button wrapper with loading spinner, loading label, and left/right icon slots.",
+    "category": "input",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "button"
+    ]
+  },
+  {
     "name": "chart-cards",
     "title": "Chart Cards",
     "description": "Recharts area and bar charts wrapped in cards with header actions, styled tooltips, and legends.",
@@ -316,6 +338,16 @@
     ]
   },
   {
+    "name": "progress-bar",
+    "title": "Progress Bar",
+    "description": "A progress bar with label, percentage readout, semantic color variants, three sizes, and an indeterminate state.",
+    "category": "feedback",
+    "dependencies": [
+      "@radix-ui/react-progress"
+    ],
+    "registryDependencies": []
+  },
+  {
     "name": "rich-tooltip",
     "title": "Rich Tooltip",
     "description": "A tooltip with all four placements, optional title line, and keyboard shortcut hints.",
@@ -334,6 +366,16 @@
     "registryDependencies": [
       "card"
     ]
+  },
+  {
+    "name": "slider-field",
+    "title": "Slider Field",
+    "description": "A labeled slider with live value readout, range (two-thumb) support, custom formatting, and min/max captions.",
+    "category": "input",
+    "dependencies": [
+      "@radix-ui/react-slider"
+    ],
+    "registryDependencies": []
   },
   {
     "name": "stats-grid",

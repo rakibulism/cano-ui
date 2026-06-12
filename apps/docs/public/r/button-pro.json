@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-pro",
+  "type": "registry:component",
+  "title": "Button Pro",
+  "description": "A drop-in button wrapper with loading spinner, loading label, and left/right icon slots.",
+  "category": "input",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "components/ui/button-pro.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { Loader2 } from \"lucide-react\"\n\nimport { cn } from \"@/lib/utils\"\nimport { Button } from \"@/components/ui/button\"\n\nexport interface ButtonProProps extends React.ComponentProps<typeof Button> {\n  /** Shows a spinner, disables the button, and swaps the label. */\n  loading?: boolean\n  /** Label shown while loading; falls back to children. */\n  loadingText?: string\n  /** Icon rendered before the label. */\n  icon?: React.ReactNode\n  /** Icon rendered after the label. */\n  iconRight?: React.ReactNode\n}\n\nexport function ButtonPro({\n  loading = false,\n  loadingText,\n  icon,\n  iconRight,\n  disabled,\n  children,\n  className,\n  ...props\n}: ButtonProProps) {\n  return (\n    <Button\n      data-slot=\"button-pro\"\n      data-loading={loading || undefined}\n      disabled={disabled || loading}\n      className={cn(loading && \"relative\", className)}\n      {...props}\n    >\n      {loading ? (\n        <Loader2 className=\"animate-spin\" aria-hidden=\"true\" />\n      ) : (\n        icon\n      )}\n      {loading ? (loadingText ?? children) : children}\n      {!loading && iconRight}\n    </Button>\n  )\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "button-pro",
+  "title": "Button Pro",
+  "description": "A drop-in button wrapper with loading spinner, loading label, and left/right icon slots.",
+  "category": "input",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["button"],
+  "files": ["registry/ui/button-pro.tsx"]
+}

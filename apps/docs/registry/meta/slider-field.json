@@ -1,0 +1,9 @@
+{
+  "name": "slider-field",
+  "title": "Slider Field",
+  "description": "A labeled slider with live value readout, range (two-thumb) support, custom formatting, and min/max captions.",
+  "category": "input",
+  "dependencies": ["@radix-ui/react-slider"],
+  "registryDependencies": [],
+  "files": ["registry/ui/slider-field.tsx"]
+}

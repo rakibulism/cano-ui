@@ -1,0 +1,9 @@
+{
+  "name": "progress-bar",
+  "title": "Progress Bar",
+  "description": "A progress bar with label, percentage readout, semantic color variants, three sizes, and an indeterminate state.",
+  "category": "feedback",
+  "dependencies": ["@radix-ui/react-progress"],
+  "registryDependencies": [],
+  "files": ["registry/ui/progress-bar.tsx"]
+}

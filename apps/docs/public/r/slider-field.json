@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "slider-field",
+  "type": "registry:component",
+  "title": "Slider Field",
+  "description": "A labeled slider with live value readout, range (two-thumb) support, custom formatting, and min/max captions.",
+  "category": "input",
+  "dependencies": [
+    "@radix-ui/react-slider"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "components/ui/slider-field.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport * as SliderPrimitive from \"@radix-ui/react-slider\"\n\nimport { cn } from \"@/lib/utils\"\n\nexport interface SliderFieldProps {\n  label?: string\n  min?: number\n  max?: number\n  step?: number\n  /** One value for a single thumb, two for a range. */\n  value?: number[]\n  defaultValue?: number[]\n  onValueChange?: (value: number[]) => void\n  /** Formats the value readout, e.g. (v) => `$${v}`. */\n  formatValue?: (value: number) => string\n  /** Hides the live value readout next to the label. */\n  showValue?: boolean\n  /** Shows min/max captions under the track. */\n  showRange?: boolean\n  disabled?: boolean\n  className?: string\n}\n\nexport function SliderField({\n  label,\n  min = 0,\n  max = 100,\n  step = 1,\n  value,\n  defaultValue,\n  onValueChange,\n  formatValue = (v) => String(v),\n  showValue = true,\n  showRange = false,\n  disabled,\n  className,\n}: SliderFieldProps) {\n  const [internal, setInternal] = React.useState(\n    value ?? defaultValue ?? [min]\n  )\n  const current = value ?? internal\n\n  function handleChange(next: number[]) {\n    setInternal(next)\n    onValueChange?.(next)\n  }\n\n  return (\n    <div\n      data-slot=\"slider-field\"\n      className={cn(\"flex w-full flex-col gap-3\", disabled && \"opacity-50\", className)}\n    >\n      {label || showValue ? (\n        <div className=\"flex items-baseline justify-between gap-2\">\n          {label ? (\n            <span className=\"text-sm font-medium text-foreground\">{label}</span>\n          ) : null}\n          {showValue ? (\n            <span className=\"text-sm tabular-nums text-muted-foreground\">\n              {current.map(formatValue).join(\" – \")}\n            </span>\n          ) : null}\n        </div>\n      ) : null}\n      <SliderPrimitive.Root\n        min={min}\n        max={max}\n        step={step}\n        value={value}\n        defaultValue={value ? undefined : (defaultValue ?? [min])}\n        onValueChange={handleChange}\n        disabled={disabled}\n        aria-label={label}\n        className=\"relative flex w-full touch-none items-center select-none\"\n      >\n        <SliderPrimitive.Track className=\"relative h-1.5 w-full grow overflow-hidden rounded-full bg-muted\">\n          <SliderPrimitive.Range className=\"absolute h-full bg-primary\" />\n        </SliderPrimitive.Track>\n        {current.map((_, i) => (\n          <SliderPrimitive.Thumb\n            key={i}\n            className=\"block size-4 shrink-0 rounded-full border border-primary bg-background shadow-sm transition-shadow hover:ring-4 hover:ring-ring/20 focus-visible:ring-4 focus-visible:ring-ring/30 focus-visible:outline-none disabled:pointer-events-none\"\n          />\n        ))}\n      </SliderPrimitive.Root>\n      {showRange ? (\n        <div className=\"flex justify-between text-xs text-muted-foreground\">\n          <span>{formatValue(min)}</span>\n          <span>{formatValue(max)}</span>\n        </div>\n      ) : null}\n    </div>\n  )\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}
