@@ -22,9 +22,11 @@ In a project that already uses shadcn/ui, no setup is needed:
 npx cano-ui add command-palette
 ```
 
-In a fresh project:
+Starting from nothing? The CLI installs components into an existing React project, so create one first:
 
 ```bash
+npx create-next-app@latest my-app
+cd my-app
 npx cano-ui init   # writes components.json, cn(), and design tokens
 npx cano-ui add app-shell
 ```
@@ -41,7 +43,7 @@ npx cano-ui diff data-table-pro   # compare local copy against the registry
 Because every item is shadcn registry-item compatible, this also works:
 
 ```bash
-npx shadcn add https://canoui.dev/r/data-table-pro.json
+npx shadcn add https://cano-ui.vercel.app/r/data-table-pro.json
 ```
 
 ## Components (18 at launch)
@@ -60,7 +62,7 @@ npx shadcn add https://canoui.dev/r/data-table-pro.json
 | Profile | Account Card |
 | Feedback | Empty State, Error Page |
 
-Browse them all with live previews at the docs site (`apps/docs`).
+Browse them all with live previews at [cano-ui.vercel.app](https://cano-ui.vercel.app).
 
 ## Repository layout
 

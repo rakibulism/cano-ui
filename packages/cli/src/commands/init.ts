@@ -39,7 +39,12 @@ export const init = new Command()
 
     if (!fs.existsSync(path.join(cwd, "package.json"))) {
       logger.error(
-        `No package.json found in ${cwd}. Run init inside a project.`
+        `No package.json found in ${cwd}. cano-ui adds components to an existing React project.`
+      )
+      logger.dim(
+        `Create one first, then run init inside it:\n  ${highlight(
+          "npx create-next-app@latest my-app"
+        )}\n  ${highlight("cd my-app")}\n  ${highlight("npx cano-ui init")}`
       )
       process.exitCode = 1
       return

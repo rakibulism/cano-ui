@@ -1,7 +1,7 @@
 // Tried in order until one responds — the docs deployment first, the GitHub
 // repo as fallback so the CLI works even between domain/deploy changes.
 const DEFAULT_REGISTRY_URLS = [
-  "https://canoui.dev/r",
+  "https://cano-ui.vercel.app/r",
   "https://raw.githubusercontent.com/rakibulism/cano-ui/main/apps/docs/public/r",
 ]
 
