@@ -25,6 +25,8 @@ export interface RichTooltipProps {
   delayDuration?: number
   /** Controlled open state — useful for previews and playgrounds. */
   open?: boolean
+  /** Set false to always honor `side`, even near the viewport edge. */
+  avoidCollisions?: boolean
   className?: string
 }
 
@@ -37,6 +39,7 @@ export function RichTooltip({
   align = "center",
   delayDuration = 200,
   open,
+  avoidCollisions = true,
   className,
 }: RichTooltipProps) {
   return (
@@ -45,6 +48,7 @@ export function RichTooltip({
       <TooltipContent
         side={side}
         align={align}
+        avoidCollisions={avoidCollisions}
         data-slot="rich-tooltip"
         className={cn(title && "max-w-60 py-2", className)}
       >
