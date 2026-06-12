@@ -80,6 +80,16 @@
     ]
   },
   {
+    "name": "bottom-sheet",
+    "title": "Bottom Sheet",
+    "description": "A mobile-style bottom sheet with drag-to-dismiss, a grab handle, optional snap points, and a sticky footer.",
+    "category": "layout",
+    "dependencies": [
+      "vaul"
+    ],
+    "registryDependencies": []
+  },
+  {
     "name": "chart-cards",
     "title": "Chart Cards",
     "description": "Recharts area and bar charts wrapped in cards with header actions, styled tooltips, and legends.",
@@ -160,6 +170,16 @@
       "calendar",
       "popover",
       "separator"
+    ]
+  },
+  {
+    "name": "drawer",
+    "title": "Drawer",
+    "description": "A props-driven side drawer with header, scrollable body, sticky footer, and four widths.",
+    "category": "layout",
+    "dependencies": [],
+    "registryDependencies": [
+      "sheet"
     ]
   },
   {
@@ -293,6 +313,16 @@
       "badge",
       "button",
       "card"
+    ]
+  },
+  {
+    "name": "rich-tooltip",
+    "title": "Rich Tooltip",
+    "description": "A tooltip with all four placements, optional title line, and keyboard shortcut hints.",
+    "category": "feedback",
+    "dependencies": [],
+    "registryDependencies": [
+      "tooltip"
     ]
   },
   {

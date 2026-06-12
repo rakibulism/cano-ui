@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "drawer",
+  "type": "registry:component",
+  "title": "Drawer",
+  "description": "A props-driven side drawer with header, scrollable body, sticky footer, and four widths.",
+  "category": "layout",
+  "dependencies": [],
+  "registryDependencies": [
+    "sheet"
+  ],
+  "files": [
+    {
+      "path": "components/ui/drawer.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\n\nimport { cn } from \"@/lib/utils\"\nimport {\n  Sheet,\n  SheetContent,\n  SheetDescription,\n  SheetFooter,\n  SheetHeader,\n  SheetTitle,\n  SheetTrigger,\n} from \"@/components/ui/sheet\"\n\nexport type DrawerSize = \"sm\" | \"default\" | \"lg\" | \"xl\"\n\nexport interface DrawerProps {\n  /** Element that opens the drawer, rendered via Radix `asChild`. */\n  trigger?: React.ReactNode\n  title: string\n  description?: string\n  side?: \"left\" | \"right\"\n  size?: DrawerSize\n  /** Sticky footer slot, e.g. save/cancel actions. */\n  footer?: React.ReactNode\n  open?: boolean\n  onOpenChange?: (open: boolean) => void\n  className?: string\n  children?: React.ReactNode\n}\n\nconst sizeClasses: Record<DrawerSize, string> = {\n  sm: \"sm:max-w-sm\",\n  default: \"sm:max-w-md\",\n  lg: \"sm:max-w-lg\",\n  xl: \"sm:max-w-xl\",\n}\n\nexport function Drawer({\n  trigger,\n  title,\n  description,\n  side = \"right\",\n  size = \"default\",\n  footer,\n  open,\n  onOpenChange,\n  className,\n  children,\n}: DrawerProps) {\n  return (\n    <Sheet open={open} onOpenChange={onOpenChange}>\n      {trigger ? <SheetTrigger asChild>{trigger}</SheetTrigger> : null}\n      <SheetContent\n        side={side}\n        data-slot=\"drawer\"\n        className={cn(\"w-full gap-0\", sizeClasses[size], className)}\n      >\n        <SheetHeader className=\"border-b\">\n          <SheetTitle>{title}</SheetTitle>\n          {description ? (\n            <SheetDescription>{description}</SheetDescription>\n          ) : null}\n        </SheetHeader>\n        <div className=\"flex-1 overflow-y-auto p-4\">{children}</div>\n        {footer ? (\n          <SheetFooter className=\"flex-row justify-end border-t\">\n            {footer}\n          </SheetFooter>\n        ) : null}\n      </SheetContent>\n    </Sheet>\n  )\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

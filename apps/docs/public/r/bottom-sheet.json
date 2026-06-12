@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "bottom-sheet",
+  "type": "registry:component",
+  "title": "Bottom Sheet",
+  "description": "A mobile-style bottom sheet with drag-to-dismiss, a grab handle, optional snap points, and a sticky footer.",
+  "category": "layout",
+  "dependencies": [
+    "vaul"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "components/ui/bottom-sheet.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { Drawer as VaulPrimitive } from \"vaul\"\n\nimport { cn } from \"@/lib/utils\"\n\nexport interface BottomSheetProps {\n  /** Element that opens the sheet, rendered via Radix `asChild`. */\n  trigger?: React.ReactNode\n  title: string\n  description?: string\n  /** Hides the drag handle bar at the top. */\n  withHandle?: boolean\n  /** Vaul snap points, e.g. [0.4, 1] — omit for content height. */\n  snapPoints?: (number | string)[]\n  footer?: React.ReactNode\n  open?: boolean\n  onOpenChange?: (open: boolean) => void\n  className?: string\n  children?: React.ReactNode\n}\n\nexport function BottomSheet({\n  trigger,\n  title,\n  description,\n  withHandle = true,\n  snapPoints,\n  footer,\n  open,\n  onOpenChange,\n  className,\n  children,\n}: BottomSheetProps) {\n  // Vaul requires activeSnapPoint state when snapPoints are used.\n  const [snap, setSnap] = React.useState<number | string | null>(\n    snapPoints?.[0] ?? null\n  )\n\n  return (\n    <VaulPrimitive.Root\n      open={open}\n      onOpenChange={onOpenChange}\n      {...(snapPoints\n        ? { snapPoints, activeSnapPoint: snap, setActiveSnapPoint: setSnap }\n        : {})}\n    >\n      {trigger ? (\n        <VaulPrimitive.Trigger asChild>{trigger}</VaulPrimitive.Trigger>\n      ) : null}\n      <VaulPrimitive.Portal>\n        <VaulPrimitive.Overlay className=\"fixed inset-0 z-50 bg-black/50\" />\n        <VaulPrimitive.Content\n          data-slot=\"bottom-sheet\"\n          className={cn(\n            \"fixed inset-x-0 bottom-0 z-50 flex max-h-[92dvh] flex-col rounded-t-xl border-t bg-background\",\n            snapPoints && \"h-full\",\n            className\n          )}\n        >\n          {withHandle ? (\n            <div\n              aria-hidden=\"true\"\n              className=\"mx-auto mt-3 h-1.5 w-10 shrink-0 rounded-full bg-muted\"\n            />\n          ) : null}\n          <div className=\"flex flex-col gap-1.5 p-4 text-center sm:text-left\">\n            <VaulPrimitive.Title className=\"font-semibold text-foreground\">\n              {title}\n            </VaulPrimitive.Title>\n            {description ? (\n              <VaulPrimitive.Description className=\"text-sm text-muted-foreground\">\n                {description}\n              </VaulPrimitive.Description>\n            ) : (\n              <VaulPrimitive.Description className=\"sr-only\">\n                {title}\n              </VaulPrimitive.Description>\n            )}\n          </div>\n          <div className=\"flex-1 overflow-y-auto px-4 pb-4\">{children}</div>\n          {footer ? (\n            <div className=\"flex flex-col gap-2 border-t p-4 pb-[max(theme(spacing.4),env(safe-area-inset-bottom))]\">\n              {footer}\n            </div>\n          ) : null}\n        </VaulPrimitive.Content>\n      </VaulPrimitive.Portal>\n    </VaulPrimitive.Root>\n  )\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

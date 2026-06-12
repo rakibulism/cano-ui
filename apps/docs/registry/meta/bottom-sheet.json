@@ -1,0 +1,9 @@
+{
+  "name": "bottom-sheet",
+  "title": "Bottom Sheet",
+  "description": "A mobile-style bottom sheet with drag-to-dismiss, a grab handle, optional snap points, and a sticky footer.",
+  "category": "layout",
+  "dependencies": ["vaul"],
+  "registryDependencies": [],
+  "files": ["registry/ui/bottom-sheet.tsx"]
+}

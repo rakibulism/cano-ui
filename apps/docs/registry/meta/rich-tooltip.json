@@ -1,0 +1,9 @@
+{
+  "name": "rich-tooltip",
+  "title": "Rich Tooltip",
+  "description": "A tooltip with all four placements, optional title line, and keyboard shortcut hints.",
+  "category": "feedback",
+  "dependencies": [],
+  "registryDependencies": ["tooltip"],
+  "files": ["registry/ui/rich-tooltip.tsx"]
+}

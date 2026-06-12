@@ -1,0 +1,9 @@
+{
+  "name": "drawer",
+  "title": "Drawer",
+  "description": "A props-driven side drawer with header, scrollable body, sticky footer, and four widths.",
+  "category": "layout",
+  "dependencies": [],
+  "registryDependencies": ["sheet"],
+  "files": ["registry/ui/drawer.tsx"]
+}
