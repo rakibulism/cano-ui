@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "stats-grid",
+  "type": "registry:component",
+  "title": "Stats Grid",
+  "description": "A responsive grid of metric cards with values, trend deltas, and skeleton loading states.",
+  "category": "dashboard",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "card",
+    "skeleton"
+  ],
+  "files": [
+    {
+      "path": "components/ui/stats-grid.tsx",
+      "content": "import * as React from \"react\"\nimport { ArrowDownRight, ArrowUpRight, Minus } from \"lucide-react\"\n\nimport { cn } from \"@/lib/utils\"\nimport { Card, CardContent } from \"@/components/ui/card\"\nimport { Skeleton } from \"@/components/ui/skeleton\"\n\ntype StatDelta = {\n  value: string\n  direction: \"up\" | \"down\" | \"neutral\"\n}\n\ninterface Stat {\n  label: string\n  value: string\n  delta?: StatDelta\n  description?: string\n}\n\ninterface StatCardProps extends React.ComponentProps<typeof Card> {\n  label: string\n  value: string\n  delta?: StatDelta\n  description?: string\n  loading?: boolean\n}\n\nconst deltaIcons = {\n  up: ArrowUpRight,\n  down: ArrowDownRight,\n  neutral: Minus,\n} as const\n\nconst deltaLabels = {\n  up: \"increased\",\n  down: \"decreased\",\n  neutral: \"unchanged\",\n} as const\n\nfunction StatDeltaIndicator({ delta }: { delta: StatDelta }) {\n  const Icon = deltaIcons[delta.direction]\n  return (\n    <span\n      className={cn(\n        \"inline-flex items-center gap-0.5 text-xs tabular-nums\",\n        delta.direction === \"neutral\"\n          ? \"text-muted-foreground\"\n          : \"text-foreground\"\n      )}\n    >\n      <Icon aria-hidden=\"true\" className=\"size-3.5\" />\n      {delta.value}\n      <span className=\"sr-only\">{deltaLabels[delta.direction]}</span>\n    </span>\n  )\n}\n\nfunction StatCard({\n  label,\n  value,\n  delta,\n  description,\n  loading = false,\n  className,\n  ...props\n}: StatCardProps) {\n  return (\n    <Card data-slot=\"stat-card\" className={cn(\"gap-0 py-5\", className)} {...props}>\n      <CardContent className=\"flex flex-col gap-1.5 px-5\">\n        {loading ? (\n          <>\n            <Skeleton className=\"h-4 w-24\" />\n            <Skeleton className=\"h-8 w-32\" />\n            <Skeleton className=\"h-4 w-16\" />\n          </>\n        ) : (\n          <>\n            <div className=\"text-sm text-muted-foreground\">{label}</div>\n            <div className=\"flex items-baseline justify-between gap-2\">\n              <span className=\"text-2xl font-semibold tracking-tight tabular-nums text-foreground\">\n                {value}\n              </span>\n              {delta ? <StatDeltaIndicator delta={delta} /> : null}\n            </div>\n            {description ? (\n              <p className=\"text-xs text-muted-foreground\">{description}</p>\n            ) : null}\n          </>\n        )}\n      </CardContent>\n    </Card>\n  )\n}\n\ninterface StatsGridProps extends React.ComponentProps<\"div\"> {\n  stats: Stat[]\n  columns?: 2 | 3 | 4\n  loading?: boolean\n}\n\nconst columnClasses = {\n  2: \"sm:grid-cols-2\",\n  3: \"sm:grid-cols-2 lg:grid-cols-3\",\n  4: \"sm:grid-cols-2 lg:grid-cols-4\",\n} as const\n\nfunction StatsGrid({\n  stats,\n  columns = 4,\n  loading = false,\n  className,\n  ...props\n}: StatsGridProps) {\n  return (\n    <div\n      data-slot=\"stats-grid\"\n      className={cn(\"grid gap-4\", columnClasses[columns], className)}\n      {...props}\n    >\n      {stats.map((stat) => (\n        <StatCard key={stat.label} loading={loading} {...stat} />\n      ))}\n    </div>\n  )\n}\n\nexport { StatsGrid, StatCard, type Stat, type StatDelta }\n",
+      "type": "registry:component"
+    }
+  ]
+}

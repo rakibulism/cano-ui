@@ -1,0 +1,9 @@
+{
+  "name": "error-page",
+  "title": "Error Page",
+  "description": "A full-viewport centered error state for 404, 500, and 403 pages with a status numeral, message, and actions.",
+  "category": "feedback",
+  "dependencies": [],
+  "registryDependencies": ["button"],
+  "files": ["registry/ui/error-page.tsx"]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "empty-state",
+  "title": "Empty State",
+  "description": "A centered placeholder for empty, error, no-results, and all-caught-up states with icon, copy, and action slots.",
+  "category": "feedback",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["button"],
+  "files": ["registry/ui/empty-state.tsx"]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "file-dropzone",
+  "title": "File Dropzone",
+  "description": "A keyboard-accessible drag-and-drop upload area with client-side validation, upload progress, and a controlled file list.",
+  "category": "input",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["button", "progress"],
+  "files": ["registry/ui/file-dropzone.tsx"]
+}

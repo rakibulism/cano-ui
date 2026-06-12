@@ -1,0 +1,9 @@
+{
+  "name": "pricing-cards",
+  "title": "Pricing Cards",
+  "description": "A three-tier pricing layout with a monthly/yearly billing toggle and a highlighted recommended plan.",
+  "category": "marketing",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["badge", "button", "card"],
+  "files": ["registry/ui/pricing-cards.tsx"]
+}

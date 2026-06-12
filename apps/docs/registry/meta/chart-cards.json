@@ -1,0 +1,9 @@
+{
+  "name": "chart-cards",
+  "title": "Chart Cards",
+  "description": "Recharts area and bar charts wrapped in cards with header actions, styled tooltips, and legends.",
+  "category": "data-viz",
+  "dependencies": ["recharts", "lucide-react"],
+  "registryDependencies": ["card", "select"],
+  "files": ["registry/ui/chart-cards.tsx"]
+}

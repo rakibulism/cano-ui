@@ -1,0 +1,15 @@
+{
+  "name": "team-members-table",
+  "title": "Team Members Table",
+  "description": "A team members list with avatars, role badges, pending invites, and per-row actions for workspace settings pages.",
+  "category": "data",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": [
+    "table",
+    "avatar",
+    "badge",
+    "button",
+    "dropdown-menu"
+  ],
+  "files": ["registry/ui/team-members-table.tsx"]
+}

@@ -1,0 +1,1 @@
+{"name":"combobox-filters","title":"Combobox Filters","description":"A multi-select filter pattern for tables and lists with searchable options, removable badge chips, and a composable filter bar.","category":"input","dependencies":["lucide-react","cmdk"],"registryDependencies":["badge","button","command","popover","separator"],"files":["registry/ui/combobox-filters.tsx"]}

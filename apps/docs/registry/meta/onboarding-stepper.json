@@ -1,0 +1,9 @@
+{
+  "name": "onboarding-stepper",
+  "title": "Onboarding Stepper",
+  "description": "A controlled multi-step wizard with a step indicator, per-step content panels, validation errors, and a navigation footer.",
+  "category": "flow",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["button", "progress"],
+  "files": ["registry/ui/onboarding-stepper.tsx"]
+}

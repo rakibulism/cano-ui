@@ -1,0 +1,9 @@
+{
+  "name": "activity-feed",
+  "title": "Activity Feed",
+  "description": "A vertical timeline of grouped activity entries with icons, actors, targets, and timestamps for audit logs and event streams.",
+  "category": "data",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": ["registry/ui/activity-feed.tsx"]
+}

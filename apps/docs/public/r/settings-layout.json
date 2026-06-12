@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "settings-layout",
+  "type": "registry:component",
+  "title": "Settings Layout",
+  "description": "A two-column settings page pattern with side navigation that collapses into a horizontal tab bar on mobile.",
+  "category": "layout",
+  "dependencies": [],
+  "registryDependencies": [
+    "card"
+  ],
+  "files": [
+    {
+      "path": "components/ui/settings-layout.tsx",
+      "content": "import * as React from \"react\"\n\nimport { cn } from \"@/lib/utils\"\nimport {\n  Card,\n  CardContent,\n  CardDescription,\n  CardFooter,\n  CardHeader,\n  CardTitle,\n} from \"@/components/ui/card\"\n\nexport interface SettingsNavItem {\n  title: string\n  href: string\n  active?: boolean\n}\n\nfunction SettingsLayout({\n  className,\n  ...props\n}: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"settings-layout\"\n      className={cn(\"flex flex-col gap-6 md:flex-row md:gap-10\", className)}\n      {...props}\n    />\n  )\n}\n\nfunction SettingsNav({\n  items,\n  className,\n  \"aria-label\": ariaLabel = \"Settings\",\n  ...props\n}: React.ComponentProps<\"nav\"> & {\n  items: SettingsNavItem[]\n}) {\n  return (\n    <nav\n      data-slot=\"settings-nav\"\n      aria-label={ariaLabel}\n      className={cn(\"md:w-48 md:shrink-0\", className)}\n      {...props}\n    >\n      <ul className=\"-mx-1 flex gap-1 overflow-x-auto px-1 pb-1 md:mx-0 md:flex-col md:px-0 md:pb-0\">\n        {items.map((item) => (\n          <li key={item.title} className=\"shrink-0 md:shrink\">\n            <a\n              href={item.href}\n              aria-current={item.active ? \"page\" : undefined}\n              className={cn(\n                \"flex items-center rounded-md px-3 py-2 text-sm font-medium whitespace-nowrap transition-colors outline-none focus-visible:ring-2 focus-visible:ring-ring\",\n                item.active\n                  ? \"bg-accent text-accent-foreground\"\n                  : \"text-muted-foreground hover:bg-accent/50 hover:text-foreground\"\n              )}\n            >\n              {item.title}\n            </a>\n          </li>\n        ))}\n      </ul>\n    </nav>\n  )\n}\n\nfunction SettingsContent({\n  className,\n  ...props\n}: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"settings-content\"\n      className={cn(\"flex min-w-0 flex-1 flex-col gap-6\", className)}\n      {...props}\n    />\n  )\n}\n\nfunction SettingsSection({\n  title,\n  description,\n  footer,\n  className,\n  children,\n  ...props\n}: React.ComponentProps<typeof Card> & {\n  title: string\n  description?: string\n  footer?: React.ReactNode\n}) {\n  return (\n    <Card data-slot=\"settings-section\" className={className} {...props}>\n      <CardHeader>\n        <CardTitle className=\"text-base\">{title}</CardTitle>\n        {description && <CardDescription>{description}</CardDescription>}\n      </CardHeader>\n      <CardContent className=\"flex flex-col gap-4\">{children}</CardContent>\n      {footer && (\n        <CardFooter className=\"justify-end gap-2 border-t\">\n          {footer}\n        </CardFooter>\n      )}\n    </Card>\n  )\n}\n\nexport { SettingsLayout, SettingsNav, SettingsContent, SettingsSection }\n",
+      "type": "registry:component"
+    }
+  ]
+}

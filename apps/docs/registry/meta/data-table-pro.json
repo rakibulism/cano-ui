@@ -1,0 +1,18 @@
+{
+  "name": "data-table-pro",
+  "title": "Data Table Pro",
+  "description": "A production-ready data table with sorting, filtering, column visibility, row selection, and pagination built on TanStack Table.",
+  "category": "data",
+  "dependencies": ["@tanstack/react-table", "lucide-react"],
+  "registryDependencies": [
+    "table",
+    "button",
+    "checkbox",
+    "dropdown-menu",
+    "input",
+    "select",
+    "skeleton",
+    "empty-state"
+  ],
+  "files": ["registry/ui/data-table-pro.tsx"]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "account-card",
+  "title": "Account Card",
+  "description": "A user profile summary card with avatar, role badge, meta details, and quick actions.",
+  "category": "profile",
+  "dependencies": [],
+  "registryDependencies": ["avatar", "badge", "button", "card"],
+  "files": ["registry/ui/account-card.tsx"]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "settings-layout",
+  "title": "Settings Layout",
+  "description": "A two-column settings page pattern with side navigation that collapses into a horizontal tab bar on mobile.",
+  "category": "layout",
+  "dependencies": [],
+  "registryDependencies": ["card"],
+  "files": ["registry/ui/settings-layout.tsx"]
+}

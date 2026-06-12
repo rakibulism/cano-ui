@@ -1,0 +1,9 @@
+{
+  "name": "app-shell",
+  "title": "App Shell",
+  "description": "A structural foundation for dashboards with a collapsible sidebar, topbar, and scrollable content area.",
+  "category": "layout",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["button", "sheet", "tooltip"],
+  "files": ["registry/ui/app-shell.tsx"]
+}

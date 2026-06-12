@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "account-card",
+  "type": "registry:component",
+  "title": "Account Card",
+  "description": "A user profile summary card with avatar, role badge, meta details, and quick actions.",
+  "category": "profile",
+  "dependencies": [],
+  "registryDependencies": [
+    "avatar",
+    "badge",
+    "button",
+    "card"
+  ],
+  "files": [
+    {
+      "path": "components/ui/account-card.tsx",
+      "content": "import * as React from \"react\"\n\nimport { cn } from \"@/lib/utils\"\nimport { Avatar, AvatarFallback, AvatarImage } from \"@/components/ui/avatar\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Card, CardContent, CardFooter } from \"@/components/ui/card\"\n\ntype AccountMeta = {\n  label: string\n  value: string\n}\n\ninterface AccountCardProps extends React.ComponentProps<typeof Card> {\n  name: string\n  email: string\n  role?: string\n  avatarUrl?: string\n  meta?: AccountMeta[]\n  actions?: React.ReactNode\n}\n\nfunction getInitials(name: string) {\n  return name\n    .split(\" \")\n    .filter(Boolean)\n    .slice(0, 2)\n    .map((part) => part[0])\n    .join(\"\")\n    .toUpperCase()\n}\n\nfunction AccountCard({\n  name,\n  email,\n  role,\n  avatarUrl,\n  meta,\n  actions,\n  className,\n  ...props\n}: AccountCardProps) {\n  return (\n    <Card data-slot=\"account-card\" className={cn(\"gap-0\", className)} {...props}>\n      <CardContent className=\"flex flex-col items-center gap-4 text-center sm:flex-row sm:items-start sm:text-left\">\n        <Avatar className=\"size-16\">\n          {avatarUrl ? <AvatarImage src={avatarUrl} alt={name} /> : null}\n          <AvatarFallback className=\"text-base\">\n            {getInitials(name)}\n          </AvatarFallback>\n        </Avatar>\n        <div className=\"flex min-w-0 flex-col items-center gap-1 sm:items-start\">\n          <div className=\"flex flex-wrap items-center justify-center gap-2 sm:justify-start\">\n            <span className=\"truncate font-semibold text-foreground\">\n              {name}\n            </span>\n            {role ? <Badge variant=\"secondary\">{role}</Badge> : null}\n          </div>\n          <span className=\"truncate text-sm text-muted-foreground\">\n            {email}\n          </span>\n          {meta && meta.length > 0 ? (\n            <div className=\"mt-1 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 sm:justify-start\">\n              {meta.map((item) => (\n                <span\n                  key={item.label}\n                  className=\"text-xs text-muted-foreground\"\n                >\n                  {item.label}{\" \"}\n                  <span className=\"font-medium text-foreground\">\n                    {item.value}\n                  </span>\n                </span>\n              ))}\n            </div>\n          ) : null}\n        </div>\n      </CardContent>\n      {actions ? (\n        <CardFooter className=\"mt-4 justify-center gap-2 border-t sm:justify-start\">\n          {actions}\n        </CardFooter>\n      ) : null}\n    </Card>\n  )\n}\n\nexport { AccountCard, type AccountCardProps, type AccountMeta }\n",
+      "type": "registry:component"
+    }
+  ]
+}

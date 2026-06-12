@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "empty-state",
+  "type": "registry:component",
+  "title": "Empty State",
+  "description": "A centered placeholder for empty, error, no-results, and all-caught-up states with icon, copy, and action slots.",
+  "category": "feedback",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "components/ui/empty-state.tsx",
+      "content": "import * as React from \"react\"\nimport { AlertCircle, CheckCircle2, SearchX, type LucideIcon } from \"lucide-react\"\n\nimport { cn } from \"@/lib/utils\"\nimport { Button } from \"@/components/ui/button\"\n\ninterface EmptyStateProps extends React.ComponentProps<\"div\"> {\n  icon?: LucideIcon\n  title: string\n  description?: string\n  action?: React.ReactNode\n  secondaryAction?: React.ReactNode\n}\n\nfunction EmptyState({\n  icon: Icon,\n  title,\n  description,\n  action,\n  secondaryAction,\n  className,\n  ...props\n}: EmptyStateProps) {\n  return (\n    <div\n      data-slot=\"empty-state\"\n      className={cn(\n        \"flex flex-col items-center justify-center px-6 py-16 text-center max-md:py-8\",\n        className\n      )}\n      {...props}\n    >\n      {Icon ? (\n        <div\n          aria-hidden=\"true\"\n          className=\"flex size-12 items-center justify-center rounded-lg bg-muted\"\n        >\n          <Icon className=\"size-6 text-muted-foreground\" />\n        </div>\n      ) : null}\n      <h3 className={cn(\"text-base font-semibold text-foreground\", Icon && \"mt-4\")}>\n        {title}\n      </h3>\n      {description ? (\n        <p className=\"mt-1.5 max-w-xs text-center text-sm text-balance text-muted-foreground\">\n          {description}\n        </p>\n      ) : null}\n      {action ? <div className=\"mt-6\">{action}</div> : null}\n      {secondaryAction ? <div className=\"mt-3\">{secondaryAction}</div> : null}\n    </div>\n  )\n}\n\ntype EmptyStatePresetProps = Omit<EmptyStateProps, \"title\"> & {\n  title?: string\n}\n\nfunction EmptyStateNoResults({\n  icon = SearchX,\n  title = \"No results found\",\n  description = \"Try adjusting your search or filters to find what you're looking for.\",\n  ...props\n}: EmptyStatePresetProps) {\n  return (\n    <EmptyState icon={icon} title={title} description={description} {...props} />\n  )\n}\n\nfunction EmptyStateError({\n  icon = AlertCircle,\n  title = \"Something went wrong\",\n  description = \"We couldn't load this content. Please try again.\",\n  onRetry,\n  action,\n  ...props\n}: EmptyStatePresetProps & { onRetry?: () => void }) {\n  return (\n    <EmptyState\n      icon={icon}\n      title={title}\n      description={description}\n      action={\n        action ??\n        (onRetry ? (\n          <Button variant=\"outline\" onClick={onRetry}>\n            Try again\n          </Button>\n        ) : undefined)\n      }\n      {...props}\n    />\n  )\n}\n\nfunction EmptyStateDone({\n  icon = CheckCircle2,\n  title = \"All caught up\",\n  description = \"You're all set. New items will show up here.\",\n  ...props\n}: EmptyStatePresetProps) {\n  return (\n    <EmptyState icon={icon} title={title} description={description} {...props} />\n  )\n}\n\nexport {\n  EmptyState,\n  EmptyStateNoResults,\n  EmptyStateError,\n  EmptyStateDone,\n  type EmptyStateProps,\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

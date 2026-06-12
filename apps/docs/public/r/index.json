@@ -1,0 +1,252 @@
+[
+  {
+    "name": "account-card",
+    "title": "Account Card",
+    "description": "A user profile summary card with avatar, role badge, meta details, and quick actions.",
+    "category": "profile",
+    "dependencies": [],
+    "registryDependencies": [
+      "avatar",
+      "badge",
+      "button",
+      "card"
+    ]
+  },
+  {
+    "name": "activity-feed",
+    "title": "Activity Feed",
+    "description": "A vertical timeline of grouped activity entries with icons, actors, targets, and timestamps for audit logs and event streams.",
+    "category": "data",
+    "dependencies": [],
+    "registryDependencies": []
+  },
+  {
+    "name": "app-shell",
+    "title": "App Shell",
+    "description": "A structural foundation for dashboards with a collapsible sidebar, topbar, and scrollable content area.",
+    "category": "layout",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "button",
+      "sheet",
+      "tooltip"
+    ]
+  },
+  {
+    "name": "auth-forms",
+    "title": "Auth Forms",
+    "description": "Polished sign-in, sign-up, and forgot-password forms with social login slots, inline validation, and loading states.",
+    "category": "auth",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "button",
+      "card",
+      "input",
+      "label",
+      "separator"
+    ]
+  },
+  {
+    "name": "chart-cards",
+    "title": "Chart Cards",
+    "description": "Recharts area and bar charts wrapped in cards with header actions, styled tooltips, and legends.",
+    "category": "data-viz",
+    "dependencies": [
+      "recharts",
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "card",
+      "select"
+    ]
+  },
+  {
+    "name": "combobox-filters",
+    "title": "Combobox Filters",
+    "description": "A multi-select filter pattern for tables and lists with searchable options, removable badge chips, and a composable filter bar.",
+    "category": "input",
+    "dependencies": [
+      "lucide-react",
+      "cmdk"
+    ],
+    "registryDependencies": [
+      "badge",
+      "button",
+      "command",
+      "popover",
+      "separator"
+    ]
+  },
+  {
+    "name": "command-palette",
+    "title": "Command Palette",
+    "description": "A Cmd+K global command interface with grouped results, recent items, keyboard shortcuts, and a discoverability footer.",
+    "category": "navigation",
+    "dependencies": [
+      "cmdk",
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "command",
+      "dialog",
+      "button"
+    ]
+  },
+  {
+    "name": "data-table-pro",
+    "title": "Data Table Pro",
+    "description": "A production-ready data table with sorting, filtering, column visibility, row selection, and pagination built on TanStack Table.",
+    "category": "data",
+    "dependencies": [
+      "@tanstack/react-table",
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "table",
+      "button",
+      "checkbox",
+      "dropdown-menu",
+      "input",
+      "select",
+      "skeleton",
+      "empty-state"
+    ]
+  },
+  {
+    "name": "date-range-picker",
+    "title": "Date Range Picker",
+    "description": "A two-month range picker with preset shortcuts, draft state committed on Apply, and a responsive single-month mobile layout.",
+    "category": "input",
+    "dependencies": [
+      "date-fns",
+      "lucide-react",
+      "react-day-picker"
+    ],
+    "registryDependencies": [
+      "button",
+      "calendar",
+      "popover",
+      "separator"
+    ]
+  },
+  {
+    "name": "empty-state",
+    "title": "Empty State",
+    "description": "A centered placeholder for empty, error, no-results, and all-caught-up states with icon, copy, and action slots.",
+    "category": "feedback",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "button"
+    ]
+  },
+  {
+    "name": "error-page",
+    "title": "Error Page",
+    "description": "A full-viewport centered error state for 404, 500, and 403 pages with a status numeral, message, and actions.",
+    "category": "feedback",
+    "dependencies": [],
+    "registryDependencies": [
+      "button"
+    ]
+  },
+  {
+    "name": "file-dropzone",
+    "title": "File Dropzone",
+    "description": "A keyboard-accessible drag-and-drop upload area with client-side validation, upload progress, and a controlled file list.",
+    "category": "input",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "button",
+      "progress"
+    ]
+  },
+  {
+    "name": "kanban-board",
+    "title": "Kanban Board",
+    "description": "A drag-and-drop kanban board with horizontally scrolling columns, rich task cards, and an accessible move menu fallback.",
+    "category": "layout",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "avatar",
+      "badge",
+      "button",
+      "dropdown-menu"
+    ]
+  },
+  {
+    "name": "onboarding-stepper",
+    "title": "Onboarding Stepper",
+    "description": "A controlled multi-step wizard with a step indicator, per-step content panels, validation errors, and a navigation footer.",
+    "category": "flow",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "button",
+      "progress"
+    ]
+  },
+  {
+    "name": "pricing-cards",
+    "title": "Pricing Cards",
+    "description": "A three-tier pricing layout with a monthly/yearly billing toggle and a highlighted recommended plan.",
+    "category": "marketing",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "badge",
+      "button",
+      "card"
+    ]
+  },
+  {
+    "name": "settings-layout",
+    "title": "Settings Layout",
+    "description": "A two-column settings page pattern with side navigation that collapses into a horizontal tab bar on mobile.",
+    "category": "layout",
+    "dependencies": [],
+    "registryDependencies": [
+      "card"
+    ]
+  },
+  {
+    "name": "stats-grid",
+    "title": "Stats Grid",
+    "description": "A responsive grid of metric cards with values, trend deltas, and skeleton loading states.",
+    "category": "dashboard",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "card",
+      "skeleton"
+    ]
+  },
+  {
+    "name": "team-members-table",
+    "title": "Team Members Table",
+    "description": "A team members list with avatars, role badges, pending invites, and per-row actions for workspace settings pages.",
+    "category": "data",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "table",
+      "avatar",
+      "badge",
+      "button",
+      "dropdown-menu"
+    ]
+  }
+]

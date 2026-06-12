@@ -1,0 +1,9 @@
+{
+  "name": "auth-forms",
+  "title": "Auth Forms",
+  "description": "Polished sign-in, sign-up, and forgot-password forms with social login slots, inline validation, and loading states.",
+  "category": "auth",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["button", "card", "input", "label", "separator"],
+  "files": ["registry/ui/auth-forms.tsx"]
+}

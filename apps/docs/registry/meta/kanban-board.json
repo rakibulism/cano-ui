@@ -1,0 +1,9 @@
+{
+  "name": "kanban-board",
+  "title": "Kanban Board",
+  "description": "A drag-and-drop kanban board with horizontally scrolling columns, rich task cards, and an accessible move menu fallback.",
+  "category": "layout",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["avatar", "badge", "button", "dropdown-menu"],
+  "files": ["registry/ui/kanban-board.tsx"]
+}

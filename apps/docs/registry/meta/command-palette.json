@@ -1,0 +1,1 @@
+{"name":"command-palette","title":"Command Palette","description":"A Cmd+K global command interface with grouped results, recent items, keyboard shortcuts, and a discoverability footer.","category":"navigation","dependencies":["cmdk","lucide-react"],"registryDependencies":["command","dialog","button"],"files":["registry/ui/command-palette.tsx"]}

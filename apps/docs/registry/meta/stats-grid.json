@@ -1,0 +1,9 @@
+{
+  "name": "stats-grid",
+  "title": "Stats Grid",
+  "description": "A responsive grid of metric cards with values, trend deltas, and skeleton loading states.",
+  "category": "dashboard",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["card", "skeleton"],
+  "files": ["registry/ui/stats-grid.tsx"]
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "error-page",
+  "type": "registry:component",
+  "title": "Error Page",
+  "description": "A full-viewport centered error state for 404, 500, and 403 pages with a status numeral, message, and actions.",
+  "category": "feedback",
+  "dependencies": [],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "components/ui/error-page.tsx",
+      "content": "import * as React from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\nfunction ErrorPage({\n  code,\n  title,\n  description,\n  actions,\n  className,\n  children,\n  ...props\n}: React.ComponentProps<\"div\"> & {\n  code?: string | number\n  title: string\n  description?: string\n  actions?: React.ReactNode\n}) {\n  return (\n    <div\n      data-slot=\"error-page\"\n      className={cn(\n        \"flex min-h-full flex-col items-center justify-center bg-background px-6 py-24 text-center\",\n        className\n      )}\n      {...props}\n    >\n      {code != null && (\n        <p\n          aria-hidden=\"true\"\n          className=\"text-7xl font-semibold tracking-tight text-foreground sm:text-8xl\"\n        >\n          {code}\n        </p>\n      )}\n      <h1 className=\"mt-6 text-xl font-semibold tracking-tight\">\n        {code != null && <span className=\"sr-only\">Error {code}: </span>}\n        {title}\n      </h1>\n      {description && (\n        <p className=\"mt-2 max-w-sm text-sm leading-relaxed text-muted-foreground\">\n          {description}\n        </p>\n      )}\n      {(actions || children) && (\n        <div className=\"mt-8 flex flex-wrap items-center justify-center gap-3\">\n          {actions}\n          {children}\n        </div>\n      )}\n    </div>\n  )\n}\n\nexport { ErrorPage }\n",
+      "type": "registry:component"
+    }
+  ]
+}
