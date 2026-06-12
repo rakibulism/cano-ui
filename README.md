@@ -92,6 +92,10 @@ shadcn/ui conventions · Tailwind v4 · Radix · lucide-react · TanStack Table 
 
 Built on the shoulders of [shadcn/ui](https://ui.shadcn.com) and [Radix](https://www.radix-ui.com). The copy-source distribution model is shadcn's; we use it because it's right.
 
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) — the bar for new components is deliberately high, so read it before opening a PR.
+
 ## License
 
 [MIT](LICENSE) — CLI, registry, components, and docs.
