@@ -1,5 +1,19 @@
+// Tried in order until one responds — the docs deployment first, the GitHub
+// repo as fallback so the CLI works even between domain/deploy changes.
+const DEFAULT_REGISTRY_URLS = [
+  "https://canoui.dev/r",
+  "https://raw.githubusercontent.com/rakibulism/cano-ui/main/apps/docs/public/r",
+]
+
 export const CANO_REGISTRY_URL =
-  process.env.CANO_REGISTRY_URL ?? "https://canoui.dev/r"
+  process.env.CANO_REGISTRY_URL ?? DEFAULT_REGISTRY_URLS[0]
+
+/** An explicit override (env or --registry) is used exclusively; the default expands to the fallback chain. */
+function canoRegistryCandidates(registryUrl: string): string[] {
+  return registryUrl === DEFAULT_REGISTRY_URLS[0] && !process.env.CANO_REGISTRY_URL
+    ? DEFAULT_REGISTRY_URLS
+    : [registryUrl]
+}
 
 // shadcn primitives our components build on are resolved from the official
 // shadcn registry, so an existing shadcn install keeps working untouched.
@@ -51,13 +65,14 @@ async function fetchJson(url: string): Promise<unknown | null> {
 export async function fetchIndex(
   registryUrl = CANO_REGISTRY_URL
 ): Promise<RegistryIndexItem[]> {
-  const data = await fetchJson(`${registryUrl}/index.json`)
-  if (!data || !Array.isArray(data)) {
-    throw new Error(
-      `Could not reach the cano registry at ${registryUrl}. Check your network or CANO_REGISTRY_URL.`
-    )
+  const candidates = canoRegistryCandidates(registryUrl)
+  for (const base of candidates) {
+    const data = await fetchJson(`${base}/index.json`)
+    if (data && Array.isArray(data)) return data as RegistryIndexItem[]
   }
-  return data as RegistryIndexItem[]
+  throw new Error(
+    `Could not reach the cano registry at ${candidates.join(" or ")}. Check your network or CANO_REGISTRY_URL.`
+  )
 }
 
 export async function fetchItem(
@@ -70,10 +85,12 @@ export async function fetchItem(
     return item ? { ...item, source: "cano" } : null
   }
 
-  const cano = (await fetchJson(`${registryUrl}/${name}.json`)) as
-    | RegistryItem
-    | null
-  if (cano) return { ...cano, source: "cano" }
+  for (const base of canoRegistryCandidates(registryUrl)) {
+    const cano = (await fetchJson(`${base}/${name}.json`)) as
+      | RegistryItem
+      | null
+    if (cano) return { ...cano, source: "cano" }
+  }
 
   for (const base of SHADCN_REGISTRY_URLS) {
     const item = (await fetchJson(`${base}/${name}.json`)) as
