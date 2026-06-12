@@ -27,6 +27,12 @@ export interface RichTooltipProps {
   open?: boolean
   /** Set false to always honor `side`, even near the viewport edge. */
   avoidCollisions?: boolean
+  /** Flip within this element instead of the viewport. */
+  collisionBoundary?: React.ComponentProps<
+    typeof TooltipContent
+  >["collisionBoundary"]
+  /** Distance in px from the boundary at which flipping kicks in. */
+  collisionPadding?: number
   className?: string
 }
 
@@ -40,6 +46,8 @@ export function RichTooltip({
   delayDuration = 200,
   open,
   avoidCollisions = true,
+  collisionBoundary,
+  collisionPadding,
   className,
 }: RichTooltipProps) {
   return (
@@ -49,6 +57,8 @@ export function RichTooltip({
         side={side}
         align={align}
         avoidCollisions={avoidCollisions}
+        collisionBoundary={collisionBoundary}
+        collisionPadding={collisionPadding}
         data-slot="rich-tooltip"
         className={cn(title && "max-w-60 py-2", className)}
       >
