@@ -1,0 +1,9 @@
+{
+  "name": "integration-cards",
+  "title": "Integration Cards",
+  "description": "A responsive grid of integration cards with logos, connect toggles, tags, and a configure action.",
+  "category": "dashboard",
+  "dependencies": [],
+  "registryDependencies": ["badge", "button", "card", "switch"],
+  "files": ["registry/ui/integration-cards.tsx"]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "feedback-dialog",
+  "title": "Feedback Dialog",
+  "description": "An emoji-rating feedback dialog with an optional comment and a thank-you state.",
+  "category": "feedback",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["button", "dialog", "label", "textarea"],
+  "files": ["registry/ui/feedback-dialog.tsx"]
+}

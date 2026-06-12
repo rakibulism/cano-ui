@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "announcement-banner",
+  "type": "registry:component",
+  "title": "Announcement Banner",
+  "description": "A dismissible announcement bar with color variants, an icon, and an inline action link.",
+  "category": "marketing",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "components/ui/announcement-banner.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { ArrowRight, Megaphone, X, type LucideIcon } from \"lucide-react\"\n\nimport { cn } from \"@/lib/utils\"\nimport { Button } from \"@/components/ui/button\"\n\nexport type AnnouncementVariant = \"default\" | \"info\" | \"success\" | \"warning\"\n\nexport interface AnnouncementBannerProps\n  extends Omit<React.ComponentProps<\"div\">, \"title\"> {\n  title: React.ReactNode\n  /** Optional secondary text shown after the title on wider screens. */\n  description?: React.ReactNode\n  variant?: AnnouncementVariant\n  icon?: LucideIcon\n  /** Action slot, e.g. a link or button; gets a default arrow link style via `actionLabel`. */\n  action?: React.ReactNode\n  actionLabel?: string\n  onAction?: () => void\n  /** Renders a close button and calls back when dismissed. */\n  onDismiss?: () => void\n}\n\nconst variantStyles: Record<AnnouncementVariant, string> = {\n  default: \"bg-primary text-primary-foreground\",\n  info: \"bg-blue-600 text-white dark:bg-blue-500\",\n  success: \"bg-emerald-600 text-white dark:bg-emerald-500\",\n  warning: \"bg-amber-500 text-amber-950\",\n}\n\nexport function AnnouncementBanner({\n  title,\n  description,\n  variant = \"default\",\n  icon: Icon = Megaphone,\n  action,\n  actionLabel,\n  onAction,\n  onDismiss,\n  className,\n  ...props\n}: AnnouncementBannerProps) {\n  const [dismissed, setDismissed] = React.useState(false)\n  if (dismissed) return null\n\n  return (\n    <div\n      data-slot=\"announcement-banner\"\n      role=\"status\"\n      className={cn(\n        \"flex w-full items-center gap-3 rounded-lg px-4 py-2.5 text-sm\",\n        variantStyles[variant],\n        className\n      )}\n      {...props}\n    >\n      <Icon className=\"size-4 shrink-0\" aria-hidden=\"true\" />\n      <p className=\"min-w-0 flex-1\">\n        <span className=\"font-medium\">{title}</span>\n        {description ? (\n          <span className=\"opacity-80 max-sm:hidden\"> — {description}</span>\n        ) : null}\n      </p>\n      {action ??\n        (actionLabel ? (\n          <button\n            type=\"button\"\n            onClick={onAction}\n            className=\"flex shrink-0 items-center gap-1 text-sm font-medium underline-offset-4 hover:underline\"\n          >\n            {actionLabel}\n            <ArrowRight className=\"size-3.5\" aria-hidden=\"true\" />\n          </button>\n        ) : null)}\n      {onDismiss ? (\n        <Button\n          variant=\"ghost\"\n          size=\"icon\"\n          aria-label=\"Dismiss announcement\"\n          className=\"size-7 shrink-0 text-current hover:bg-white/15 hover:text-current\"\n          onClick={() => {\n            setDismissed(true)\n            onDismiss()\n          }}\n        >\n          <X aria-hidden=\"true\" />\n        </Button>\n      ) : null}\n    </div>\n  )\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

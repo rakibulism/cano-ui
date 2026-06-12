@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "usage-meter",
+  "type": "registry:component",
+  "title": "Usage Meter",
+  "description": "A plan usage card with per-resource progress bars, near-limit warnings, and an upgrade slot.",
+  "category": "dashboard",
+  "dependencies": [],
+  "registryDependencies": [
+    "card",
+    "progress"
+  ],
+  "files": [
+    {
+      "path": "components/ui/usage-meter.tsx",
+      "content": "import * as React from \"react\"\n\nimport { cn } from \"@/lib/utils\"\nimport {\n  Card,\n  CardAction,\n  CardContent,\n  CardDescription,\n  CardFooter,\n  CardHeader,\n  CardTitle,\n} from \"@/components/ui/card\"\nimport { Progress } from \"@/components/ui/progress\"\n\nexport interface UsageMeterItem {\n  /** Resource name, e.g. \"API requests\". */\n  label: string\n  /** Current usage in the same unit as `limit`. */\n  used: number\n  limit: number\n  /** Pre-formatted display values, e.g. \"84.2k\" — falls back to raw numbers. */\n  usedLabel?: string\n  limitLabel?: string\n}\n\nexport interface UsageMeterProps extends React.ComponentProps<typeof Card> {\n  items: UsageMeterItem[]\n  /** Fraction of the limit at which a meter is highlighted, default 0.8. */\n  warnAt?: number\n  title?: string\n  description?: string\n  /** Slot for an upgrade CTA or plan badge, rendered in the header. */\n  action?: React.ReactNode\n  footer?: React.ReactNode\n}\n\nfunction UsageMeterRow({\n  item,\n  warnAt,\n}: {\n  item: UsageMeterItem\n  warnAt: number\n}) {\n  const fraction = item.limit > 0 ? item.used / item.limit : 0\n  const percent = Math.min(100, Math.round(fraction * 100))\n  const nearLimit = fraction >= warnAt\n\n  return (\n    <div className=\"flex flex-col gap-1.5\">\n      <div className=\"flex items-baseline justify-between gap-2\">\n        <span className=\"text-sm font-medium text-foreground\">\n          {item.label}\n        </span>\n        <span\n          className={cn(\n            \"text-xs tabular-nums\",\n            nearLimit\n              ? \"font-medium text-destructive\"\n              : \"text-muted-foreground\"\n          )}\n        >\n          {item.usedLabel ?? item.used.toLocaleString()} /{\" \"}\n          {item.limitLabel ?? item.limit.toLocaleString()}\n        </span>\n      </div>\n      <Progress\n        value={percent}\n        aria-label={`${item.label}: ${percent}% of limit used`}\n        className={cn(nearLimit && \"[&>*]:bg-destructive\")}\n      />\n      {nearLimit ? (\n        <p className=\"text-xs text-destructive\">\n          {percent >= 100 ? \"Limit reached\" : `${percent}% of limit used`}\n        </p>\n      ) : null}\n    </div>\n  )\n}\n\nexport function UsageMeter({\n  items,\n  warnAt = 0.8,\n  title = \"Usage\",\n  description,\n  action,\n  footer,\n  className,\n  ...props\n}: UsageMeterProps) {\n  return (\n    <Card data-slot=\"usage-meter\" className={cn(\"w-full\", className)} {...props}>\n      <CardHeader>\n        <CardTitle>{title}</CardTitle>\n        {description ? <CardDescription>{description}</CardDescription> : null}\n        {action ? <CardAction>{action}</CardAction> : null}\n      </CardHeader>\n      <CardContent className=\"flex flex-col gap-5\">\n        {items.map((item) => (\n          <UsageMeterRow key={item.label} item={item} warnAt={warnAt} />\n        ))}\n      </CardContent>\n      {footer ? <CardFooter>{footer}</CardFooter> : null}\n    </Card>\n  )\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

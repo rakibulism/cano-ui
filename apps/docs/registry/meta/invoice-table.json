@@ -1,0 +1,9 @@
+{
+  "name": "invoice-table",
+  "title": "Invoice Table",
+  "description": "A billing history table with status badges, formatted amounts, and per-row download actions.",
+  "category": "data",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["badge", "button", "table"],
+  "files": ["registry/ui/invoice-table.tsx"]
+}

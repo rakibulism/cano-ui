@@ -1,0 +1,9 @@
+{
+  "name": "api-key-manager",
+  "title": "API Key Manager",
+  "description": "An API key list with a create dialog, masked keys, copy-to-clipboard, and revoke actions.",
+  "category": "data",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["badge", "button", "dialog", "input", "label", "tooltip"],
+  "files": ["registry/ui/api-key-manager.tsx"]
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "integration-cards",
+  "type": "registry:component",
+  "title": "Integration Cards",
+  "description": "A responsive grid of integration cards with logos, connect toggles, tags, and a configure action.",
+  "category": "dashboard",
+  "dependencies": [],
+  "registryDependencies": [
+    "badge",
+    "button",
+    "card",
+    "switch"
+  ],
+  "files": [
+    {
+      "path": "components/ui/integration-cards.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\n\nimport { cn } from \"@/lib/utils\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Button } from \"@/components/ui/button\"\nimport {\n  Card,\n  CardContent,\n  CardFooter,\n} from \"@/components/ui/card\"\nimport { Switch } from \"@/components/ui/switch\"\n\nexport interface Integration {\n  id: string\n  name: string\n  description: string\n  /** Logo or icon slot, e.g. an <img> or a Lucide icon. */\n  logo?: React.ReactNode\n  connected?: boolean\n  /** Shown as a small badge, e.g. \"Beta\" or \"Popular\". */\n  tag?: string\n  /** Disables the toggle, e.g. for plan-gated integrations. */\n  disabled?: boolean\n}\n\nexport interface IntegrationCardsProps\n  extends Omit<React.ComponentProps<\"div\">, \"onToggle\"> {\n  integrations: Integration[]\n  onToggle?: (integration: Integration, connected: boolean) => void\n  onConfigure?: (integration: Integration) => void\n}\n\nexport function IntegrationCard({\n  integration,\n  onToggle,\n  onConfigure,\n  className,\n}: {\n  integration: Integration\n  onToggle?: (integration: Integration, connected: boolean) => void\n  onConfigure?: (integration: Integration) => void\n  className?: string\n}) {\n  const switchId = `integration-${integration.id}`\n\n  return (\n    <Card\n      data-slot=\"integration-card\"\n      className={cn(\"gap-4 py-4\", className)}\n    >\n      <CardContent className=\"flex items-start gap-3 px-4\">\n        {integration.logo ? (\n          <span\n            aria-hidden=\"true\"\n            className=\"flex size-10 shrink-0 items-center justify-center rounded-md border bg-muted/50 [&>svg]:size-5\"\n          >\n            {integration.logo}\n          </span>\n        ) : null}\n        <div className=\"flex min-w-0 flex-1 flex-col gap-1\">\n          <div className=\"flex items-center gap-2\">\n            <label\n              htmlFor={switchId}\n              className=\"truncate text-sm font-semibold\"\n            >\n              {integration.name}\n            </label>\n            {integration.tag ? (\n              <Badge variant=\"secondary\" className=\"text-xs\">\n                {integration.tag}\n              </Badge>\n            ) : null}\n          </div>\n          <p className=\"line-clamp-2 text-xs text-muted-foreground\">\n            {integration.description}\n          </p>\n        </div>\n        <Switch\n          id={switchId}\n          checked={integration.connected ?? false}\n          disabled={integration.disabled}\n          onCheckedChange={\n            onToggle\n              ? (checked) => onToggle(integration, checked)\n              : undefined\n          }\n        />\n      </CardContent>\n      {integration.connected && onConfigure ? (\n        <CardFooter className=\"px-4\">\n          <Button\n            variant=\"outline\"\n            size=\"sm\"\n            className=\"w-full\"\n            onClick={() => onConfigure(integration)}\n          >\n            Configure\n          </Button>\n        </CardFooter>\n      ) : null}\n    </Card>\n  )\n}\n\nexport function IntegrationCards({\n  integrations,\n  onToggle,\n  onConfigure,\n  className,\n  ...props\n}: IntegrationCardsProps) {\n  return (\n    <div\n      data-slot=\"integration-cards\"\n      className={cn(\"grid w-full gap-4 sm:grid-cols-2 lg:grid-cols-3\", className)}\n      {...props}\n    >\n      {integrations.map((integration) => (\n        <IntegrationCard\n          key={integration.id}\n          integration={integration}\n          onToggle={onToggle}\n          onConfigure={onConfigure}\n        />\n      ))}\n    </div>\n  )\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

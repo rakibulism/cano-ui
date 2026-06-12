@@ -1,0 +1,9 @@
+{
+  "name": "usage-meter",
+  "title": "Usage Meter",
+  "description": "A plan usage card with per-resource progress bars, near-limit warnings, and an upgrade slot.",
+  "category": "dashboard",
+  "dependencies": [],
+  "registryDependencies": ["card", "progress"],
+  "files": ["registry/ui/usage-meter.tsx"]
+}

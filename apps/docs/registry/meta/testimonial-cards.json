@@ -1,0 +1,9 @@
+{
+  "name": "testimonial-cards",
+  "title": "Testimonial Cards",
+  "description": "A masonry wall of testimonial cards with quotes, avatars, roles, and company logos.",
+  "category": "marketing",
+  "dependencies": [],
+  "registryDependencies": ["avatar", "card"],
+  "files": ["registry/ui/testimonial-cards.tsx"]
+}

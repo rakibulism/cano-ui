@@ -1,0 +1,9 @@
+{
+  "name": "announcement-banner",
+  "title": "Announcement Banner",
+  "description": "A dismissible announcement bar with color variants, an icon, and an inline action link.",
+  "category": "marketing",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["button"],
+  "files": ["registry/ui/announcement-banner.tsx"]
+}

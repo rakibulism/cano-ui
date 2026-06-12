@@ -21,6 +21,35 @@
     "registryDependencies": []
   },
   {
+    "name": "announcement-banner",
+    "title": "Announcement Banner",
+    "description": "A dismissible announcement bar with color variants, an icon, and an inline action link.",
+    "category": "marketing",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "button"
+    ]
+  },
+  {
+    "name": "api-key-manager",
+    "title": "API Key Manager",
+    "description": "An API key list with a create dialog, masked keys, copy-to-clipboard, and revoke actions.",
+    "category": "data",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "badge",
+      "button",
+      "dialog",
+      "input",
+      "label",
+      "tooltip"
+    ]
+  },
+  {
     "name": "app-shell",
     "title": "App Shell",
     "description": "A structural foundation for dashboards with a collapsible sidebar, topbar, and scrollable content area.",
@@ -156,6 +185,21 @@
     ]
   },
   {
+    "name": "feedback-dialog",
+    "title": "Feedback Dialog",
+    "description": "An emoji-rating feedback dialog with an optional comment and a thank-you state.",
+    "category": "feedback",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "button",
+      "dialog",
+      "label",
+      "textarea"
+    ]
+  },
+  {
     "name": "file-dropzone",
     "title": "File Dropzone",
     "description": "A keyboard-accessible drag-and-drop upload area with client-side validation, upload progress, and a controlled file list.",
@@ -166,6 +210,33 @@
     "registryDependencies": [
       "button",
       "progress"
+    ]
+  },
+  {
+    "name": "integration-cards",
+    "title": "Integration Cards",
+    "description": "A responsive grid of integration cards with logos, connect toggles, tags, and a configure action.",
+    "category": "dashboard",
+    "dependencies": [],
+    "registryDependencies": [
+      "badge",
+      "button",
+      "card",
+      "switch"
+    ]
+  },
+  {
+    "name": "invoice-table",
+    "title": "Invoice Table",
+    "description": "A billing history table with status badges, formatted amounts, and per-row download actions.",
+    "category": "data",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "badge",
+      "button",
+      "table"
     ]
   },
   {
@@ -181,6 +252,20 @@
       "badge",
       "button",
       "dropdown-menu"
+    ]
+  },
+  {
+    "name": "notification-center",
+    "title": "Notification Center",
+    "description": "A bell-triggered notification popover with unread badge, all/unread tabs, and mark-all-read.",
+    "category": "feedback",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "button",
+      "popover",
+      "tabs"
     ]
   },
   {
@@ -247,6 +332,28 @@
       "badge",
       "button",
       "dropdown-menu"
+    ]
+  },
+  {
+    "name": "testimonial-cards",
+    "title": "Testimonial Cards",
+    "description": "A masonry wall of testimonial cards with quotes, avatars, roles, and company logos.",
+    "category": "marketing",
+    "dependencies": [],
+    "registryDependencies": [
+      "avatar",
+      "card"
+    ]
+  },
+  {
+    "name": "usage-meter",
+    "title": "Usage Meter",
+    "description": "A plan usage card with per-resource progress bars, near-limit warnings, and an upgrade slot.",
+    "category": "dashboard",
+    "dependencies": [],
+    "registryDependencies": [
+      "card",
+      "progress"
     ]
   }
 ]

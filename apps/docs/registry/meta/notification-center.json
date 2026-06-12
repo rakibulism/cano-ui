@@ -1,0 +1,9 @@
+{
+  "name": "notification-center",
+  "title": "Notification Center",
+  "description": "A bell-triggered notification popover with unread badge, all/unread tabs, and mark-all-read.",
+  "category": "feedback",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["button", "popover", "tabs"],
+  "files": ["registry/ui/notification-center.tsx"]
+}

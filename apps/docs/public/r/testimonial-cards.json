@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "testimonial-cards",
+  "type": "registry:component",
+  "title": "Testimonial Cards",
+  "description": "A masonry wall of testimonial cards with quotes, avatars, roles, and company logos.",
+  "category": "marketing",
+  "dependencies": [],
+  "registryDependencies": [
+    "avatar",
+    "card"
+  ],
+  "files": [
+    {
+      "path": "components/ui/testimonial-cards.tsx",
+      "content": "import * as React from \"react\"\n\nimport { cn } from \"@/lib/utils\"\nimport {\n  Avatar,\n  AvatarFallback,\n  AvatarImage,\n} from \"@/components/ui/avatar\"\nimport { Card, CardContent, CardFooter } from \"@/components/ui/card\"\n\nexport interface Testimonial {\n  id: string\n  quote: string\n  author: string\n  /** Role and company, e.g. \"CTO, Acme Inc.\" */\n  role?: string\n  avatarUrl?: string\n  /** Company logo slot rendered opposite the author. */\n  logo?: React.ReactNode\n}\n\nexport interface TestimonialCardsProps extends React.ComponentProps<\"div\"> {\n  testimonials: Testimonial[]\n  /** Number of masonry columns on large screens (1–3), default 3. */\n  columns?: 1 | 2 | 3\n}\n\nfunction initials(name: string) {\n  return name\n    .split(\" \")\n    .map((part) => part[0])\n    .slice(0, 2)\n    .join(\"\")\n    .toUpperCase()\n}\n\nexport function TestimonialCard({\n  testimonial,\n  className,\n}: {\n  testimonial: Testimonial\n  className?: string\n}) {\n  return (\n    <Card\n      data-slot=\"testimonial-card\"\n      className={cn(\"break-inside-avoid gap-4\", className)}\n    >\n      <CardContent>\n        <blockquote className=\"text-sm leading-relaxed text-foreground\">\n          &ldquo;{testimonial.quote}&rdquo;\n        </blockquote>\n      </CardContent>\n      <CardFooter className=\"justify-between gap-3\">\n        <div className=\"flex min-w-0 items-center gap-3\">\n          <Avatar className=\"size-9\">\n            {testimonial.avatarUrl ? (\n              <AvatarImage src={testimonial.avatarUrl} alt=\"\" />\n            ) : null}\n            <AvatarFallback className=\"text-xs\">\n              {initials(testimonial.author)}\n            </AvatarFallback>\n          </Avatar>\n          <div className=\"flex min-w-0 flex-col\">\n            <span className=\"truncate text-sm font-medium\">\n              {testimonial.author}\n            </span>\n            {testimonial.role ? (\n              <span className=\"truncate text-xs text-muted-foreground\">\n                {testimonial.role}\n              </span>\n            ) : null}\n          </div>\n        </div>\n        {testimonial.logo ? (\n          <span\n            aria-hidden=\"true\"\n            className=\"shrink-0 text-muted-foreground [&>svg]:size-5\"\n          >\n            {testimonial.logo}\n          </span>\n        ) : null}\n      </CardFooter>\n    </Card>\n  )\n}\n\nconst columnClasses: Record<NonNullable<TestimonialCardsProps[\"columns\"]>, string> = {\n  1: \"columns-1\",\n  2: \"columns-1 md:columns-2\",\n  3: \"columns-1 md:columns-2 lg:columns-3\",\n}\n\nexport function TestimonialCards({\n  testimonials,\n  columns = 3,\n  className,\n  ...props\n}: TestimonialCardsProps) {\n  return (\n    <div\n      data-slot=\"testimonial-cards\"\n      className={cn(\"w-full gap-4 space-y-4\", columnClasses[columns], className)}\n      {...props}\n    >\n      {testimonials.map((testimonial) => (\n        <TestimonialCard key={testimonial.id} testimonial={testimonial} />\n      ))}\n    </div>\n  )\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}
