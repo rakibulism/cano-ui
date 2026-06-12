@@ -1,6 +1,6 @@
 # cano-ui
 
-The CLI for [cano](https://github.com/rakibulism/cano) — design-led, shadcn-compatible components, copied as source into your project.
+The CLI for [cano](https://github.com/rakibulism/cano-ui) — design-led, shadcn-compatible components, copied as source into your project.
 
 ```bash
 npx cano-ui add data-table-pro

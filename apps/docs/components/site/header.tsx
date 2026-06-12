@@ -19,7 +19,7 @@ export function SiteHeader() {
             Components
           </Link>
           <a
-            href="https://github.com/rakibulism/cano"
+            href="https://github.com/rakibulism/cano-ui"
             target="_blank"
             rel="noreferrer"
             className="text-muted-foreground transition-colors hover:text-foreground"

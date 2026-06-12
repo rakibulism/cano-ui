@@ -106,7 +106,7 @@ export default function HomePage() {
         <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-4 px-6 py-8 text-sm text-muted-foreground">
           <span>MIT licensed. Built on shadcn/ui, Radix, and Tailwind.</span>
           <a
-            href="https://github.com/rakibulism/cano"
+            href="https://github.com/rakibulism/cano-ui"
             target="_blank"
             rel="noreferrer"
             className="transition-colors hover:text-foreground"
