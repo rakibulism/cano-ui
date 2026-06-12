@@ -1,0 +1,11 @@
+{
+  "name": "otp-input",
+  "title": "OTP Input",
+  "description": "A one-time-code input with auto-advance, paste support, backspace navigation, and an error state.",
+  "category": "input",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    "registry/ui/otp-input.tsx"
+  ]
+}

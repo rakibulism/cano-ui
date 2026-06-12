@@ -112,6 +112,19 @@
     ]
   },
   {
+    "name": "card-payment-input",
+    "title": "Card Payment Input",
+    "description": "Credit card fields with live number formatting, brand detection, expiry auto-slash, and CVC length per brand.",
+    "category": "input",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "input",
+      "label"
+    ]
+  },
+  {
     "name": "chart-cards",
     "title": "Chart Cards",
     "description": "Recharts area and bar charts wrapped in cards with header actions, styled tooltips, and legends.",
@@ -255,6 +268,27 @@
     ]
   },
   {
+    "name": "input-field",
+    "title": "Input Field",
+    "description": "A complete form field — label, helper text, error state, required marker, and inline icons around an input.",
+    "category": "input",
+    "dependencies": [],
+    "registryDependencies": [
+      "input",
+      "label"
+    ]
+  },
+  {
+    "name": "input-group",
+    "title": "Input Group",
+    "description": "Fuses inputs, text addons, and buttons into one segmented control, e.g. https:// prefixes and copy buttons.",
+    "category": "input",
+    "dependencies": [],
+    "registryDependencies": [
+      "input"
+    ]
+  },
+  {
     "name": "integration-cards",
     "title": "Integration Cards",
     "description": "A responsive grid of integration cards with logos, connect toggles, tags, and a configure action.",
@@ -319,6 +353,19 @@
     ]
   },
   {
+    "name": "number-input",
+    "title": "Number Input",
+    "description": "A stepper input with increment/decrement buttons, min/max clamping, step precision, and arrow-key support.",
+    "category": "input",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "button",
+      "input"
+    ]
+  },
+  {
     "name": "onboarding-stepper",
     "title": "Onboarding Stepper",
     "description": "A controlled multi-step wizard with a step indicator, per-step content panels, validation errors, and a navigation footer.",
@@ -329,6 +376,26 @@
     "registryDependencies": [
       "button",
       "progress"
+    ]
+  },
+  {
+    "name": "otp-input",
+    "title": "OTP Input",
+    "description": "A one-time-code input with auto-advance, paste support, backspace navigation, and an error state.",
+    "category": "input",
+    "dependencies": [],
+    "registryDependencies": []
+  },
+  {
+    "name": "pagination-bar",
+    "title": "Pagination Bar",
+    "description": "A stateful pagination bar with sibling/ellipsis logic, prev/next, and an optional showing x–y of z caption.",
+    "category": "navigation",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "button"
     ]
   },
   {

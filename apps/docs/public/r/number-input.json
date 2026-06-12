@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "number-input",
+  "type": "registry:component",
+  "title": "Number Input",
+  "description": "A stepper input with increment/decrement buttons, min/max clamping, step precision, and arrow-key support.",
+  "category": "input",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button",
+    "input"
+  ],
+  "files": [
+    {
+      "path": "components/ui/number-input.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { Minus, Plus } from \"lucide-react\"\n\nimport { cn } from \"@/lib/utils\"\nimport { Button } from \"@/components/ui/button\"\nimport { Input } from \"@/components/ui/input\"\n\nexport interface NumberInputProps {\n  value?: number\n  defaultValue?: number\n  onValueChange?: (value: number) => void\n  min?: number\n  max?: number\n  step?: number\n  label?: string\n  disabled?: boolean\n  className?: string\n}\n\nexport function NumberInput({\n  value,\n  defaultValue = 0,\n  onValueChange,\n  min = -Infinity,\n  max = Infinity,\n  step = 1,\n  label,\n  disabled,\n  className,\n}: NumberInputProps) {\n  const [internal, setInternal] = React.useState(defaultValue)\n  const current = value ?? internal\n  // Text mirror so partial input (\"-\", \"1.\") survives while typing.\n  const [text, setText] = React.useState(String(current))\n\n  React.useEffect(() => {\n    setText(String(current))\n  }, [current])\n\n  function clamp(n: number) {\n    return Math.min(max, Math.max(min, n))\n  }\n\n  function commit(n: number) {\n    const next = clamp(n)\n    setInternal(next)\n    setText(String(next))\n    onValueChange?.(next)\n  }\n\n  function nudge(direction: 1 | -1) {\n    // Round to the step's precision so 0.1 + 0.2 doesn't leak floats.\n    const decimals = (String(step).split(\".\")[1] ?? \"\").length\n    commit(Number((current + direction * step).toFixed(decimals)))\n  }\n\n  return (\n    <div\n      data-slot=\"number-input\"\n      className={cn(\"isolate inline-flex items-stretch\", className)}\n    >\n      <Button\n        type=\"button\"\n        variant=\"outline\"\n        size=\"icon\"\n        aria-label={`Decrease${label ? ` ${label}` : \"\"}`}\n        disabled={disabled || current <= min}\n        onClick={() => nudge(-1)}\n        className=\"rounded-r-none shadow-none\"\n      >\n        <Minus aria-hidden=\"true\" />\n      </Button>\n      <Input\n        type=\"text\"\n        inputMode=\"decimal\"\n        role=\"spinbutton\"\n        aria-label={label}\n        aria-valuenow={current}\n        aria-valuemin={Number.isFinite(min) ? min : undefined}\n        aria-valuemax={Number.isFinite(max) ? max : undefined}\n        value={text}\n        disabled={disabled}\n        onChange={(e) => {\n          setText(e.target.value)\n          const parsed = Number(e.target.value)\n          if (e.target.value !== \"\" && !Number.isNaN(parsed)) {\n            setInternal(clamp(parsed))\n            onValueChange?.(clamp(parsed))\n          }\n        }}\n        onBlur={() => {\n          const parsed = Number(text)\n          commit(text === \"\" || Number.isNaN(parsed) ? current : parsed)\n        }}\n        onKeyDown={(e) => {\n          if (e.key === \"ArrowUp\") {\n            e.preventDefault()\n            nudge(1)\n          } else if (e.key === \"ArrowDown\") {\n            e.preventDefault()\n            nudge(-1)\n          }\n        }}\n        className=\"z-10 -mx-px w-16 rounded-none text-center tabular-nums shadow-none focus-visible:z-20\"\n      />\n      <Button\n        type=\"button\"\n        variant=\"outline\"\n        size=\"icon\"\n        aria-label={`Increase${label ? ` ${label}` : \"\"}`}\n        disabled={disabled || current >= max}\n        onClick={() => nudge(1)}\n        className=\"rounded-l-none shadow-none\"\n      >\n        <Plus aria-hidden=\"true\" />\n      </Button>\n    </div>\n  )\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

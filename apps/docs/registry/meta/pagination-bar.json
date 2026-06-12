@@ -1,0 +1,15 @@
+{
+  "name": "pagination-bar",
+  "title": "Pagination Bar",
+  "description": "A stateful pagination bar with sibling/ellipsis logic, prev/next, and an optional showing x\u2013y of z caption.",
+  "category": "navigation",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    "registry/ui/pagination-bar.tsx"
+  ]
+}

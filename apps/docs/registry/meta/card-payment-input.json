@@ -1,0 +1,16 @@
+{
+  "name": "card-payment-input",
+  "title": "Card Payment Input",
+  "description": "Credit card fields with live number formatting, brand detection, expiry auto-slash, and CVC length per brand.",
+  "category": "input",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "input",
+    "label"
+  ],
+  "files": [
+    "registry/ui/card-payment-input.tsx"
+  ]
+}

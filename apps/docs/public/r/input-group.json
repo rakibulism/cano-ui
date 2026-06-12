@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-group",
+  "type": "registry:component",
+  "title": "Input Group",
+  "description": "Fuses inputs, text addons, and buttons into one segmented control, e.g. https:// prefixes and copy buttons.",
+  "category": "input",
+  "dependencies": [],
+  "registryDependencies": [
+    "input"
+  ],
+  "files": [
+    {
+      "path": "components/ui/input-group.tsx",
+      "content": "import * as React from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\n/**\n * Fuses inputs, addons, and buttons into one control: outer corners stay\n * rounded, inner corners flatten, and shared edges collapse.\n */\nexport function InputGroup({\n  className,\n  ...props\n}: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      role=\"group\"\n      data-slot=\"input-group\"\n      className={cn(\n        \"isolate flex w-full items-stretch\",\n        \"[&>*]:rounded-none [&>*]:shadow-none [&>*:focus-visible]:z-10 [&>*:focus-within]:z-10\",\n        \"[&>*:first-child]:rounded-l-md [&>*:last-child]:rounded-r-md\",\n        \"[&>*:not(:first-child)]:-ml-px\",\n        \"[&>input]:h-auto [&>input]:flex-1\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nexport interface InputGroupAddonProps extends React.ComponentProps<\"span\"> {\n  /** Render as an interactive element (e.g. wrapping a select). */\n  asChild?: boolean\n}\n\n/** Static text or icon segment, e.g. \"https://\" or \"@\". */\nexport function InputGroupAddon({\n  className,\n  ...props\n}: InputGroupAddonProps) {\n  return (\n    <span\n      data-slot=\"input-group-addon\"\n      className={cn(\n        \"flex items-center border border-input bg-muted px-3 text-sm text-muted-foreground [&>svg]:size-4\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

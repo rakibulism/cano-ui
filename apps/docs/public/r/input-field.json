@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-field",
+  "type": "registry:component",
+  "title": "Input Field",
+  "description": "A complete form field — label, helper text, error state, required marker, and inline icons around an input.",
+  "category": "input",
+  "dependencies": [],
+  "registryDependencies": [
+    "input",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "components/ui/input-field.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\n\nimport { cn } from \"@/lib/utils\"\nimport { Input } from \"@/components/ui/input\"\nimport { Label } from \"@/components/ui/label\"\n\nexport interface InputFieldProps\n  extends Omit<React.ComponentProps<\"input\">, \"size\"> {\n  label?: string\n  /** Helper text under the field; replaced by `error` when set. */\n  description?: string\n  /** Error message — colors the border and text. */\n  error?: string\n  /** Icon rendered inside the field, before the text. */\n  icon?: React.ReactNode\n  /** Icon or element rendered inside the field, after the text. */\n  iconRight?: React.ReactNode\n  containerClassName?: string\n}\n\nexport function InputField({\n  label,\n  description,\n  error,\n  icon,\n  iconRight,\n  required,\n  id: idProp,\n  containerClassName,\n  className,\n  ...props\n}: InputFieldProps) {\n  const autoId = React.useId()\n  const id = idProp ?? autoId\n  const hintId = `${id}-hint`\n\n  return (\n    <div\n      data-slot=\"input-field\"\n      className={cn(\"flex w-full flex-col gap-2\", containerClassName)}\n    >\n      {label ? (\n        <Label htmlFor={id}>\n          {label}\n          {required ? (\n            <span aria-hidden=\"true\" className=\"-ml-0.5 text-destructive\">\n              *\n            </span>\n          ) : null}\n        </Label>\n      ) : null}\n      <div className=\"relative\">\n        {icon ? (\n          <span\n            aria-hidden=\"true\"\n            className=\"pointer-events-none absolute top-1/2 left-3 -translate-y-1/2 text-muted-foreground [&>svg]:size-4\"\n          >\n            {icon}\n          </span>\n        ) : null}\n        <Input\n          id={id}\n          required={required}\n          aria-invalid={error ? true : undefined}\n          aria-describedby={description || error ? hintId : undefined}\n          className={cn(icon && \"pl-9\", iconRight && \"pr-9\", className)}\n          {...props}\n        />\n        {iconRight ? (\n          <span className=\"absolute top-1/2 right-3 -translate-y-1/2 text-muted-foreground [&>svg]:size-4\">\n            {iconRight}\n          </span>\n        ) : null}\n      </div>\n      {error ? (\n        <p id={hintId} className=\"text-sm text-destructive\">\n          {error}\n        </p>\n      ) : description ? (\n        <p id={hintId} className=\"text-sm text-muted-foreground\">\n          {description}\n        </p>\n      ) : null}\n    </div>\n  )\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

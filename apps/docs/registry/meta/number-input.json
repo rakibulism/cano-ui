@@ -1,0 +1,16 @@
+{
+  "name": "number-input",
+  "title": "Number Input",
+  "description": "A stepper input with increment/decrement buttons, min/max clamping, step precision, and arrow-key support.",
+  "category": "input",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button",
+    "input"
+  ],
+  "files": [
+    "registry/ui/number-input.tsx"
+  ]
+}

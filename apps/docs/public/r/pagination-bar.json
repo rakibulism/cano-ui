@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pagination-bar",
+  "type": "registry:component",
+  "title": "Pagination Bar",
+  "description": "A stateful pagination bar with sibling/ellipsis logic, prev/next, and an optional showing x–y of z caption.",
+  "category": "navigation",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "components/ui/pagination-bar.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { ChevronLeft, ChevronRight } from \"lucide-react\"\n\nimport { cn } from \"@/lib/utils\"\nimport { Button } from \"@/components/ui/button\"\n\nexport interface PaginationBarProps {\n  /** Current page, 1-based. */\n  page: number\n  pageCount: number\n  onPageChange: (page: number) => void\n  /** Numbered buttons shown on each side of the current page. */\n  siblingCount?: number\n  /** Optional \"Showing x–y of z\" caption; provide both to render it. */\n  totalItems?: number\n  pageSize?: number\n  className?: string\n}\n\nconst GAP = \"…\" as const\n\n/** 1 … 4 [5] 6 … 20 — numbers to render with gaps collapsed. */\nfunction buildRange(page: number, pageCount: number, siblingCount: number) {\n  const range: (number | typeof GAP)[] = []\n  const start = Math.max(2, page - siblingCount)\n  const end = Math.min(pageCount - 1, page + siblingCount)\n\n  range.push(1)\n  if (start > 2) range.push(GAP)\n  for (let i = start; i <= end; i++) range.push(i)\n  if (end < pageCount - 1) range.push(GAP)\n  if (pageCount > 1) range.push(pageCount)\n  return range\n}\n\nexport function PaginationBar({\n  page,\n  pageCount,\n  onPageChange,\n  siblingCount = 1,\n  totalItems,\n  pageSize,\n  className,\n}: PaginationBarProps) {\n  const range = buildRange(page, pageCount, siblingCount)\n  const showCaption = totalItems !== undefined && pageSize !== undefined\n  const from = showCaption ? (page - 1) * pageSize + 1 : 0\n  const to = showCaption ? Math.min(page * pageSize, totalItems) : 0\n\n  return (\n    <nav\n      aria-label=\"Pagination\"\n      data-slot=\"pagination-bar\"\n      className={cn(\n        \"flex w-full flex-wrap items-center justify-between gap-3\",\n        className\n      )}\n    >\n      {showCaption ? (\n        <p className=\"text-sm text-muted-foreground\">\n          Showing <span className=\"font-medium text-foreground\">{from}–{to}</span>{\" \"}\n          of <span className=\"font-medium text-foreground\">{totalItems}</span>\n        </p>\n      ) : null}\n      <div className={cn(\"flex items-center gap-1\", !showCaption && \"mx-auto\")}>\n        <Button\n          variant=\"ghost\"\n          size=\"icon\"\n          aria-label=\"Previous page\"\n          disabled={page <= 1}\n          onClick={() => onPageChange(page - 1)}\n        >\n          <ChevronLeft aria-hidden=\"true\" />\n        </Button>\n        {range.map((item, i) =>\n          item === GAP ? (\n            <span\n              key={`gap-${i}`}\n              aria-hidden=\"true\"\n              className=\"px-1.5 text-sm text-muted-foreground\"\n            >\n              {GAP}\n            </span>\n          ) : (\n            <Button\n              key={item}\n              variant={item === page ? \"outline\" : \"ghost\"}\n              size=\"icon\"\n              aria-label={`Page ${item}`}\n              aria-current={item === page ? \"page\" : undefined}\n              onClick={() => onPageChange(item)}\n              className=\"tabular-nums\"\n            >\n              {item}\n            </Button>\n          )\n        )}\n        <Button\n          variant=\"ghost\"\n          size=\"icon\"\n          aria-label=\"Next page\"\n          disabled={page >= pageCount}\n          onClick={() => onPageChange(page + 1)}\n        >\n          <ChevronRight aria-hidden=\"true\" />\n        </Button>\n      </div>\n    </nav>\n  )\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

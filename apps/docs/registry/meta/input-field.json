@@ -1,0 +1,14 @@
+{
+  "name": "input-field",
+  "title": "Input Field",
+  "description": "A complete form field \u2014 label, helper text, error state, required marker, and inline icons around an input.",
+  "category": "input",
+  "dependencies": [],
+  "registryDependencies": [
+    "input",
+    "label"
+  ],
+  "files": [
+    "registry/ui/input-field.tsx"
+  ]
+}

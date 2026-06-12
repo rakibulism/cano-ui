@@ -1,0 +1,13 @@
+{
+  "name": "input-group",
+  "title": "Input Group",
+  "description": "Fuses inputs, text addons, and buttons into one segmented control, e.g. https:// prefixes and copy buttons.",
+  "category": "input",
+  "dependencies": [],
+  "registryDependencies": [
+    "input"
+  ],
+  "files": [
+    "registry/ui/input-group.tsx"
+  ]
+}
