@@ -26,6 +26,7 @@ const RELEASES: Release[] = [
       "Reworked the site header into real navigation (Docs, Components, CLI, GitHub) with active-route highlighting.",
       "Added a category sidebar with scroll-spy to the Components page, and this Changelog.",
       "Added the cano logo mark across the header and footer, and as the favicon.",
+      "Enabled automatic light/dark theming that follows the device preference, with no flash and theme-aware logo and favicon.",
     ],
   },
   {

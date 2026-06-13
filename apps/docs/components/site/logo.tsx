@@ -9,7 +9,7 @@ export function Logo({ className }: { className?: string }) {
       xmlns="http://www.w3.org/2000/svg"
       role="img"
       aria-label="cano logo"
-      className={cn("size-6", className)}
+      className={cn("size-6 dark:invert", className)}
     >
       <g clipPath="url(#cano-logo-clip)">
         <path
