@@ -1,0 +1,14 @@
+{
+  "name": "accordion",
+  "title": "Accordion",
+  "description": "A vertically stacked set of collapsible disclosure sections, one or many open at a time.",
+  "category": "layout",
+  "dependencies": [
+    "@radix-ui/react-accordion",
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "files": [
+    "registry/ui/accordion.tsx"
+  ]
+}

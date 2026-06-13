@@ -17,6 +17,14 @@ export interface Update {
 
 export const UPDATES: Update[] = [
   {
+    id: 10,
+    date: "June 13, 2026",
+    type: "component",
+    title: "8 new primitives",
+    description:
+      "Added accordion, collapsible, toggle, toggle-group, alert, breadcrumb, aspect-ratio, and spinner — the first batch of the standard primitive set.",
+  },
+  {
     id: 9,
     date: "June 13, 2026",
     type: "feature",

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "spinner",
+  "type": "registry:component",
+  "title": "Spinner",
+  "description": "An accessible loading spinner, sizable via className.",
+  "category": "feedback",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "components/ui/spinner.tsx",
+      "content": "import * as React from \"react\"\nimport { Loader2 } from \"lucide-react\"\n\nimport { cn } from \"@/lib/utils\"\n\nexport interface SpinnerProps extends React.ComponentProps<\"svg\"> {\n  /** Accessible label; defaults to \"Loading\". */\n  label?: string\n}\n\n/** An accessible loading spinner. Sizes via className, e.g. size-6. */\nfunction Spinner({ className, label = \"Loading\", ...props }: SpinnerProps) {\n  return (\n    <Loader2\n      data-slot=\"spinner\"\n      role=\"status\"\n      aria-label={label}\n      className={cn(\"size-4 shrink-0 animate-spin\", className)}\n      {...props}\n    />\n  )\n}\n\nexport { Spinner }\n",
+      "type": "registry:component"
+    }
+  ]
+}

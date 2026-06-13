@@ -1,0 +1,13 @@
+{
+  "name": "spinner",
+  "title": "Spinner",
+  "description": "An accessible loading spinner, sizable via className.",
+  "category": "feedback",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "files": [
+    "registry/ui/spinner.tsx"
+  ]
+}

@@ -17,6 +17,14 @@ interface Release {
 
 const RELEASES: Release[] = [
   {
+    version: "0.1.8",
+    date: "June 13, 2026",
+    tag: "Components",
+    changes: [
+      "Started filling out the standard primitive set: added accordion, collapsible, toggle, toggle-group, alert, breadcrumb, aspect-ratio, and spinner (batch 1).",
+    ],
+  },
+  {
     version: "0.1.7",
     date: "June 13, 2026",
     tag: "Docs",

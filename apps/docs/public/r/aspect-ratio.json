@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "aspect-ratio",
+  "type": "registry:component",
+  "title": "Aspect Ratio",
+  "description": "Constrains content to a fixed width-to-height ratio, e.g. 16:9 media.",
+  "category": "layout",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "components/ui/aspect-ratio.tsx",
+      "content": "import * as React from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\nexport interface AspectRatioProps extends React.ComponentProps<\"div\"> {\n  /** Width / height, e.g. 16 / 9. Defaults to 1. */\n  ratio?: number\n}\n\n/** Constrains its content to a given width-to-height ratio. */\nfunction AspectRatio({\n  ratio = 1,\n  className,\n  style,\n  ...props\n}: AspectRatioProps) {\n  return (\n    <div\n      data-slot=\"aspect-ratio\"\n      style={{ aspectRatio: ratio, ...style }}\n      className={cn(\"relative w-full\", className)}\n      {...props}\n    />\n  )\n}\n\nexport { AspectRatio }\n",
+      "type": "registry:component"
+    }
+  ]
+}

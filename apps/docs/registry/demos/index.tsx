@@ -12,11 +12,15 @@ function loading() {
 // so they render client-only — SSRing them only invites hydration mismatches.
 /** Demo components, loaded per page so one heavy demo doesn't bloat the rest. */
 export const demos: Record<string, ComponentType> = {
+  "accordion": dynamic(() => import("./accordion-demo"), { ssr: false, loading }),
   "account-card": dynamic(() => import("./account-card-demo"), { ssr: false, loading }),
+  "alert": dynamic(() => import("./alert-demo"), { ssr: false, loading }),
+  "aspect-ratio": dynamic(() => import("./aspect-ratio-demo"), { ssr: false, loading }),
   "activity-feed": dynamic(() => import("./activity-feed-demo"), { ssr: false, loading }),
   "announcement-banner": dynamic(() => import("./announcement-banner-demo"), { ssr: false, loading }),
   "api-key-manager": dynamic(() => import("./api-key-manager-demo"), { ssr: false, loading }),
   "bottom-sheet": dynamic(() => import("./bottom-sheet-demo"), { ssr: false, loading }),
+  "breadcrumb": dynamic(() => import("./breadcrumb-demo"), { ssr: false, loading }),
   "button-group": dynamic(() => import("./button-group-demo"), { ssr: false, loading }),
   "button-pro": dynamic(() => import("./button-pro-demo"), { ssr: false, loading }),
   "app-shell": dynamic(() => import("./app-shell-demo"), { ssr: false, loading }),
@@ -25,6 +29,7 @@ export const demos: Record<string, ComponentType> = {
   "chart-cards": dynamic(() => import("./chart-cards-demo"), { ssr: false, loading }),
   "combobox-filters": dynamic(() => import("./combobox-filters-demo"), { ssr: false, loading }),
   "command-palette": dynamic(() => import("./command-palette-demo"), { ssr: false, loading }),
+  "collapsible": dynamic(() => import("./collapsible-demo"), { ssr: false, loading }),
   "country-input": dynamic(() => import("./country-input-demo"), { ssr: false, loading }),
   "data-table-pro": dynamic(() => import("./data-table-pro-demo"), { ssr: false, loading }),
   "date-range-picker": dynamic(() => import("./date-range-picker-demo"), { ssr: false, loading }),
@@ -53,8 +58,11 @@ export const demos: Record<string, ComponentType> = {
   "search-results": dynamic(() => import("./search-results-demo"), { ssr: false, loading }),
   "settings-layout": dynamic(() => import("./settings-layout-demo"), { ssr: false, loading }),
   "slider-field": dynamic(() => import("./slider-field-demo"), { ssr: false, loading }),
+  "spinner": dynamic(() => import("./spinner-demo"), { ssr: false, loading }),
   "stats-grid": dynamic(() => import("./stats-grid-demo"), { ssr: false, loading }),
   "team-members-table": dynamic(() => import("./team-members-table-demo"), { ssr: false, loading }),
   "testimonial-cards": dynamic(() => import("./testimonial-cards-demo"), { ssr: false, loading }),
+  "toggle": dynamic(() => import("./toggle-demo"), { ssr: false, loading }),
+  "toggle-group": dynamic(() => import("./toggle-group-demo"), { ssr: false, loading }),
   "usage-meter": dynamic(() => import("./usage-meter-demo"), { ssr: false, loading }),
 }

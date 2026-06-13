@@ -1,0 +1,13 @@
+{
+  "name": "toggle",
+  "title": "Toggle",
+  "description": "A two-state button that can be on or off, with default and outline variants.",
+  "category": "input",
+  "dependencies": [
+    "@radix-ui/react-toggle"
+  ],
+  "registryDependencies": [],
+  "files": [
+    "registry/ui/toggle.tsx"
+  ]
+}

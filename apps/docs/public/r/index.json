@@ -1,5 +1,16 @@
 [
   {
+    "name": "accordion",
+    "title": "Accordion",
+    "description": "A vertically stacked set of collapsible disclosure sections, one or many open at a time.",
+    "category": "layout",
+    "dependencies": [
+      "@radix-ui/react-accordion",
+      "lucide-react"
+    ],
+    "registryDependencies": []
+  },
+  {
     "name": "account-card",
     "title": "Account Card",
     "description": "A user profile summary card with avatar, role badge, meta details, and quick actions.",
@@ -17,6 +28,14 @@
     "title": "Activity Feed",
     "description": "A vertical timeline of grouped activity entries with icons, actors, targets, and timestamps for audit logs and event streams.",
     "category": "data",
+    "dependencies": [],
+    "registryDependencies": []
+  },
+  {
+    "name": "alert",
+    "title": "Alert",
+    "description": "A callout for important messages, with default and destructive variants and an icon slot.",
+    "category": "feedback",
     "dependencies": [],
     "registryDependencies": []
   },
@@ -64,6 +83,14 @@
     ]
   },
   {
+    "name": "aspect-ratio",
+    "title": "Aspect Ratio",
+    "description": "Constrains content to a fixed width-to-height ratio, e.g. 16:9 media.",
+    "category": "layout",
+    "dependencies": [],
+    "registryDependencies": []
+  },
+  {
     "name": "auth-forms",
     "title": "Auth Forms",
     "description": "Polished sign-in, sign-up, and forgot-password forms with social login slots, inline validation, and loading states.",
@@ -86,6 +113,17 @@
     "category": "layout",
     "dependencies": [
       "vaul"
+    ],
+    "registryDependencies": []
+  },
+  {
+    "name": "breadcrumb",
+    "title": "Breadcrumb",
+    "description": "A navigation trail showing the current page's location, with separators and an ellipsis.",
+    "category": "navigation",
+    "dependencies": [
+      "@radix-ui/react-slot",
+      "lucide-react"
     ],
     "registryDependencies": []
   },
@@ -137,6 +175,16 @@
       "card",
       "select"
     ]
+  },
+  {
+    "name": "collapsible",
+    "title": "Collapsible",
+    "description": "An interactive section that expands and collapses its content.",
+    "category": "layout",
+    "dependencies": [
+      "@radix-ui/react-collapsible"
+    ],
+    "registryDependencies": []
   },
   {
     "name": "combobox-filters",
@@ -517,6 +565,16 @@
     "registryDependencies": []
   },
   {
+    "name": "spinner",
+    "title": "Spinner",
+    "description": "An accessible loading spinner, sizable via className.",
+    "category": "feedback",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": []
+  },
+  {
     "name": "stats-grid",
     "title": "Stats Grid",
     "description": "A responsive grid of metric cards with values, trend deltas, and skeleton loading states.",
@@ -554,6 +612,28 @@
     "registryDependencies": [
       "avatar",
       "card"
+    ]
+  },
+  {
+    "name": "toggle",
+    "title": "Toggle",
+    "description": "A two-state button that can be on or off, with default and outline variants.",
+    "category": "input",
+    "dependencies": [
+      "@radix-ui/react-toggle"
+    ],
+    "registryDependencies": []
+  },
+  {
+    "name": "toggle-group",
+    "title": "Toggle Group",
+    "description": "A set of toggles where one or more can be pressed, fused into a single control.",
+    "category": "input",
+    "dependencies": [
+      "@radix-ui/react-toggle-group"
+    ],
+    "registryDependencies": [
+      "toggle"
     ]
   },
   {

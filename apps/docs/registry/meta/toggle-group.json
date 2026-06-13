@@ -1,0 +1,15 @@
+{
+  "name": "toggle-group",
+  "title": "Toggle Group",
+  "description": "A set of toggles where one or more can be pressed, fused into a single control.",
+  "category": "input",
+  "dependencies": [
+    "@radix-ui/react-toggle-group"
+  ],
+  "registryDependencies": [
+    "toggle"
+  ],
+  "files": [
+    "registry/ui/toggle-group.tsx"
+  ]
+}

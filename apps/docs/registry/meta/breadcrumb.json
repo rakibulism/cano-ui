@@ -1,0 +1,14 @@
+{
+  "name": "breadcrumb",
+  "title": "Breadcrumb",
+  "description": "A navigation trail showing the current page's location, with separators and an ellipsis.",
+  "category": "navigation",
+  "dependencies": [
+    "@radix-ui/react-slot",
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "files": [
+    "registry/ui/breadcrumb.tsx"
+  ]
+}

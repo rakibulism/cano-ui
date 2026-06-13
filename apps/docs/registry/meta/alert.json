@@ -1,0 +1,11 @@
+{
+  "name": "alert",
+  "title": "Alert",
+  "description": "A callout for important messages, with default and destructive variants and an icon slot.",
+  "category": "feedback",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    "registry/ui/alert.tsx"
+  ]
+}
