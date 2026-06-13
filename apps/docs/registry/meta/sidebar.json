@@ -1,0 +1,22 @@
+{
+  "name": "sidebar",
+  "title": "Sidebar",
+  "description": "A full application sidebar \u2014 collapsible (offcanvas/icon), mobile sheet, keyboard shortcut, menus, submenus, and an inset content area.",
+  "category": "layout",
+  "dependencies": [
+    "@radix-ui/react-slot",
+    "class-variance-authority",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button",
+    "input",
+    "separator",
+    "sheet",
+    "skeleton",
+    "tooltip"
+  ],
+  "files": [
+    "registry/ui/sidebar.tsx"
+  ]
+}

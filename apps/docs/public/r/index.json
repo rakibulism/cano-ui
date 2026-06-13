@@ -175,6 +175,19 @@
     ]
   },
   {
+    "name": "carousel",
+    "title": "Carousel",
+    "description": "A draggable, keyboard-accessible carousel powered by Embla, horizontal or vertical, with prev/next controls.",
+    "category": "layout",
+    "dependencies": [
+      "embla-carousel-react",
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "button"
+    ]
+  },
+  {
     "name": "chart-cards",
     "title": "Chart Cards",
     "description": "Recharts area and bar charts wrapped in cards with header actions, styled tooltips, and legends.",
@@ -340,6 +353,18 @@
     ]
   },
   {
+    "name": "field",
+    "title": "Field",
+    "description": "Composable form-field parts: label, description, error, group, and fieldset with horizontal/vertical layout.",
+    "category": "input",
+    "dependencies": [
+      "class-variance-authority"
+    ],
+    "registryDependencies": [
+      "label"
+    ]
+  },
+  {
     "name": "file-dropzone",
     "title": "File Dropzone",
     "description": "A keyboard-accessible drag-and-drop upload area with client-side validation, upload progress, and a controlled file list.",
@@ -409,6 +434,17 @@
       "button",
       "table"
     ]
+  },
+  {
+    "name": "item",
+    "title": "Item",
+    "description": "A flexible row primitive — media, content, title, description, and actions — for lists and option cards.",
+    "category": "layout",
+    "dependencies": [
+      "@radix-ui/react-slot",
+      "class-variance-authority"
+    ],
+    "registryDependencies": []
   },
   {
     "name": "kanban-board",
@@ -591,6 +627,17 @@
     "registryDependencies": []
   },
   {
+    "name": "resizable",
+    "title": "Resizable",
+    "description": "Resizable panel groups with draggable handles, horizontal or vertical, powered by react-resizable-panels.",
+    "category": "layout",
+    "dependencies": [
+      "react-resizable-panels",
+      "lucide-react"
+    ],
+    "registryDependencies": []
+  },
+  {
     "name": "rich-tooltip",
     "title": "Rich Tooltip",
     "description": "A tooltip with all four placements, optional title line, and keyboard shortcut hints.",
@@ -639,6 +686,25 @@
     "dependencies": [],
     "registryDependencies": [
       "card"
+    ]
+  },
+  {
+    "name": "sidebar",
+    "title": "Sidebar",
+    "description": "A full application sidebar — collapsible (offcanvas/icon), mobile sheet, keyboard shortcut, menus, submenus, and an inset content area.",
+    "category": "layout",
+    "dependencies": [
+      "@radix-ui/react-slot",
+      "class-variance-authority",
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "button",
+      "input",
+      "separator",
+      "sheet",
+      "skeleton",
+      "tooltip"
     ]
   },
   {
@@ -732,6 +798,14 @@
     "registryDependencies": [
       "toggle"
     ]
+  },
+  {
+    "name": "typography",
+    "title": "Typography",
+    "description": "Consistent typographic components — headings, lead, paragraph, blockquote, list, inline code, and muted text.",
+    "category": "layout",
+    "dependencies": [],
+    "registryDependencies": []
   },
   {
     "name": "usage-meter",

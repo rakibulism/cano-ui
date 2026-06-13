@@ -1,0 +1,11 @@
+{
+  "name": "typography",
+  "title": "Typography",
+  "description": "Consistent typographic components \u2014 headings, lead, paragraph, blockquote, list, inline code, and muted text.",
+  "category": "layout",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    "registry/ui/typography.tsx"
+  ]
+}

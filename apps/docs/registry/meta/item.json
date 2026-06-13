@@ -1,0 +1,14 @@
+{
+  "name": "item",
+  "title": "Item",
+  "description": "A flexible row primitive \u2014 media, content, title, description, and actions \u2014 for lists and option cards.",
+  "category": "layout",
+  "dependencies": [
+    "@radix-ui/react-slot",
+    "class-variance-authority"
+  ],
+  "registryDependencies": [],
+  "files": [
+    "registry/ui/item.tsx"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "field",
+  "title": "Field",
+  "description": "Composable form-field parts: label, description, error, group, and fieldset with horizontal/vertical layout.",
+  "category": "input",
+  "dependencies": [
+    "class-variance-authority"
+  ],
+  "registryDependencies": [
+    "label"
+  ],
+  "files": [
+    "registry/ui/field.tsx"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "resizable",
+  "title": "Resizable",
+  "description": "Resizable panel groups with draggable handles, horizontal or vertical, powered by react-resizable-panels.",
+  "category": "layout",
+  "dependencies": [
+    "react-resizable-panels",
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "files": [
+    "registry/ui/resizable.tsx"
+  ]
+}

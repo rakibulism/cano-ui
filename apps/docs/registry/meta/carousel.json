@@ -1,0 +1,16 @@
+{
+  "name": "carousel",
+  "title": "Carousel",
+  "description": "A draggable, keyboard-accessible carousel powered by Embla, horizontal or vertical, with prev/next controls.",
+  "category": "layout",
+  "dependencies": [
+    "embla-carousel-react",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    "registry/ui/carousel.tsx"
+  ]
+}

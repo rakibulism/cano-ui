@@ -18,6 +18,15 @@ export interface Update {
 
 export const UPDATES: Update[] = [
   {
+    id: 18,
+    date: "June 13, 2026",
+    time: "6:52 PM",
+    type: "component",
+    title: "6 final primitives",
+    description:
+      "Added item, field, typography, carousel, resizable, and sidebar — completing the standard primitive set (68 components total).",
+  },
+  {
     id: 17,
     date: "June 13, 2026",
     time: "6:34 PM",

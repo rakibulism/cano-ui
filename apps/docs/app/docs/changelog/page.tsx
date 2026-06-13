@@ -18,6 +18,16 @@ interface Release {
 
 const RELEASES: Release[] = [
   {
+    version: "0.1.14",
+    date: "June 13, 2026",
+    time: "6:52 PM",
+    tag: "Components",
+    changes: [
+      "Completed the standard primitive set: added item, field, typography, carousel, resizable, and sidebar.",
+      "The registry now spans 68 components — the full shadcn primitive set plus cano's design-led components.",
+    ],
+  },
+  {
     version: "0.1.13",
     date: "June 13, 2026",
     time: "6:34 PM",
