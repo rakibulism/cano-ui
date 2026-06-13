@@ -1,0 +1,13 @@
+{
+  "name": "hover-card",
+  "title": "Hover Card",
+  "description": "A card of rich preview content shown when hovering a trigger.",
+  "category": "feedback",
+  "dependencies": [
+    "@radix-ui/react-hover-card"
+  ],
+  "registryDependencies": [],
+  "files": [
+    "registry/ui/hover-card.tsx"
+  ]
+}

@@ -17,6 +17,14 @@ interface Release {
 
 const RELEASES: Release[] = [
   {
+    version: "0.1.9",
+    date: "June 13, 2026",
+    tag: "Components",
+    changes: [
+      "More standard primitives (batch 2): alert-dialog, radio-group, hover-card, context-menu, scroll-area, and native-select.",
+    ],
+  },
+  {
     version: "0.1.8",
     date: "June 13, 2026",
     tag: "Components",

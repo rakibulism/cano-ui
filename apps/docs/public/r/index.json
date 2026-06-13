@@ -40,6 +40,18 @@
     "registryDependencies": []
   },
   {
+    "name": "alert-dialog",
+    "title": "Alert Dialog",
+    "description": "A modal dialog that interrupts the user for a confirmation or destructive action.",
+    "category": "feedback",
+    "dependencies": [
+      "@radix-ui/react-alert-dialog"
+    ],
+    "registryDependencies": [
+      "button"
+    ]
+  },
+  {
     "name": "announcement-banner",
     "title": "Announcement Banner",
     "description": "A dismissible announcement bar with color variants, an icon, and an inline action link.",
@@ -219,6 +231,17 @@
     ]
   },
   {
+    "name": "context-menu",
+    "title": "Context Menu",
+    "description": "A right-click menu with items, checkboxes, radios, submenus, and shortcuts.",
+    "category": "navigation",
+    "dependencies": [
+      "@radix-ui/react-context-menu",
+      "lucide-react"
+    ],
+    "registryDependencies": []
+  },
+  {
     "name": "country-input",
     "title": "Country Input",
     "description": "A searchable country combobox with emoji flags and a built-in ISO list with dial codes.",
@@ -330,6 +353,16 @@
     ]
   },
   {
+    "name": "hover-card",
+    "title": "Hover Card",
+    "description": "A card of rich preview content shown when hovering a trigger.",
+    "category": "feedback",
+    "dependencies": [
+      "@radix-ui/react-hover-card"
+    ],
+    "registryDependencies": []
+  },
+  {
     "name": "input-field",
     "title": "Input Field",
     "description": "A complete form field — label, helper text, error state, required marker, and inline icons around an input.",
@@ -412,6 +445,16 @@
       "command",
       "country-input"
     ]
+  },
+  {
+    "name": "native-select",
+    "title": "Native Select",
+    "description": "A styled native select — zero-JS and great on mobile — with a chevron.",
+    "category": "input",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": []
   },
   {
     "name": "notification-center",
@@ -514,6 +557,17 @@
     "registryDependencies": []
   },
   {
+    "name": "radio-group",
+    "title": "Radio Group",
+    "description": "A set of checkable buttons where only one can be selected at a time.",
+    "category": "input",
+    "dependencies": [
+      "@radix-ui/react-radio-group",
+      "lucide-react"
+    ],
+    "registryDependencies": []
+  },
+  {
     "name": "rich-tooltip",
     "title": "Rich Tooltip",
     "description": "A tooltip with all four placements, optional title line, and keyboard shortcut hints.",
@@ -522,6 +576,16 @@
     "registryDependencies": [
       "tooltip"
     ]
+  },
+  {
+    "name": "scroll-area",
+    "title": "Scroll Area",
+    "description": "A scrollable region with a slim, styled, cross-browser scrollbar.",
+    "category": "layout",
+    "dependencies": [
+      "@radix-ui/react-scroll-area"
+    ],
+    "registryDependencies": []
   },
   {
     "name": "search-bar",

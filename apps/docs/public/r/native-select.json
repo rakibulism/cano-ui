@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "native-select",
+  "type": "registry:component",
+  "title": "Native Select",
+  "description": "A styled native select — zero-JS and great on mobile — with a chevron.",
+  "category": "input",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "components/ui/native-select.tsx",
+      "content": "import * as React from \"react\"\nimport { ChevronDownIcon } from \"lucide-react\"\n\nimport { cn } from \"@/lib/utils\"\n\n/**\n * A styled native <select> — lightweight, no JS, great on mobile. For rich\n * popovers, search, or custom options, reach for the Select component instead.\n */\nfunction NativeSelect({\n  className,\n  children,\n  ...props\n}: React.ComponentProps<\"select\">) {\n  return (\n    <div data-slot=\"native-select\" className=\"relative w-full\">\n      <select\n        className={cn(\n          \"h-9 w-full appearance-none rounded-md border border-input bg-transparent py-1 pr-8 pl-3 text-sm shadow-xs transition-[color,box-shadow] outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:bg-input/30\",\n          className\n        )}\n        {...props}\n      >\n        {children}\n      </select>\n      <ChevronDownIcon\n        aria-hidden=\"true\"\n        className=\"pointer-events-none absolute top-1/2 right-3 size-4 -translate-y-1/2 text-muted-foreground\"\n      />\n    </div>\n  )\n}\n\nexport { NativeSelect }\n",
+      "type": "registry:component"
+    }
+  ]
+}

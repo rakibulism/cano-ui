@@ -17,6 +17,14 @@ export interface Update {
 
 export const UPDATES: Update[] = [
   {
+    id: 11,
+    date: "June 13, 2026",
+    type: "component",
+    title: "6 more primitives",
+    description:
+      "Added alert-dialog, radio-group, hover-card, context-menu, scroll-area, and native-select (batch 2).",
+  },
+  {
     id: 10,
     date: "June 13, 2026",
     type: "component",

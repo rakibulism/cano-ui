@@ -1,0 +1,14 @@
+{
+  "name": "context-menu",
+  "title": "Context Menu",
+  "description": "A right-click menu with items, checkboxes, radios, submenus, and shortcuts.",
+  "category": "navigation",
+  "dependencies": [
+    "@radix-ui/react-context-menu",
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "files": [
+    "registry/ui/context-menu.tsx"
+  ]
+}

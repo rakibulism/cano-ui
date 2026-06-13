@@ -1,0 +1,13 @@
+{
+  "name": "scroll-area",
+  "title": "Scroll Area",
+  "description": "A scrollable region with a slim, styled, cross-browser scrollbar.",
+  "category": "layout",
+  "dependencies": [
+    "@radix-ui/react-scroll-area"
+  ],
+  "registryDependencies": [],
+  "files": [
+    "registry/ui/scroll-area.tsx"
+  ]
+}
