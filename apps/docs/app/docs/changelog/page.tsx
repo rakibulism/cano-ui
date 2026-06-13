@@ -28,6 +28,7 @@ const RELEASES: Release[] = [
       "Added the cano logo mark across the header and footer, and as the favicon.",
       "Enabled automatic light/dark theming that follows the device preference, with no flash and theme-aware logo and favicon.",
       "Added a Light / Dark / System theme toggle in the header that persists the choice and overrides the device preference.",
+      "Added a header notifications bell and an Updates feed (/docs/updates) for granular, day-to-day change notes.",
     ],
   },
   {

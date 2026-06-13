@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { Logo } from "@/components/site/logo"
 import { ThemeToggle } from "@/components/site/theme-toggle"
+import { UpdatesBell } from "@/components/site/updates-bell"
 
 const NAV: {
   href: string
@@ -81,6 +82,7 @@ export function SiteHeader() {
           >
             GitHub
           </a>
+          <UpdatesBell />
           <ThemeToggle />
         </div>
       </div>

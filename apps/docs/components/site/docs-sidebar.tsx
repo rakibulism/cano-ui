@@ -28,7 +28,10 @@ export const DOCS_NAV: { title: string; items: DocsNavItem[] }[] = [
   },
   {
     title: "Releases",
-    items: [{ href: "/docs/changelog", label: "Changelog" }],
+    items: [
+      { href: "/docs/changelog", label: "Changelog" },
+      { href: "/docs/updates", label: "Updates" },
+    ],
   },
 ]
 
