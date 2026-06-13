@@ -18,6 +18,15 @@ export interface Update {
 
 export const UPDATES: Update[] = [
   {
+    id: 22,
+    date: "June 13, 2026",
+    time: "8:04 PM",
+    type: "feature",
+    title: "20 more templates",
+    description:
+      "Templates wave 5 — 92 total now; every SaaS category gained two more interactive apps, plus more website variety.",
+  },
+  {
     id: 21,
     date: "June 13, 2026",
     time: "7:46 PM",
