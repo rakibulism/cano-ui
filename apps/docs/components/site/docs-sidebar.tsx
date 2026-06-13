@@ -26,6 +26,10 @@ export const DOCS_NAV: { title: string; items: DocsNavItem[] }[] = [
     title: "Command line",
     items: [{ href: "/docs/cli", label: "Cano CLI" }],
   },
+  {
+    title: "Releases",
+    items: [{ href: "/docs/changelog", label: "Changelog" }],
+  },
 ]
 
 /** Flat, ordered list of doc pages — used by the prev/next pager. */
