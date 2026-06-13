@@ -1,0 +1,14 @@
+{
+  "name": "menubar",
+  "title": "Menubar",
+  "description": "A desktop-style menu bar with menus, submenus, checkboxes, radios, and shortcuts.",
+  "category": "navigation",
+  "dependencies": [
+    "@radix-ui/react-menubar",
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "files": [
+    "registry/ui/menubar.tsx"
+  ]
+}

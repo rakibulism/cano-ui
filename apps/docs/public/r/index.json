@@ -447,11 +447,34 @@
     ]
   },
   {
+    "name": "menubar",
+    "title": "Menubar",
+    "description": "A desktop-style menu bar with menus, submenus, checkboxes, radios, and shortcuts.",
+    "category": "navigation",
+    "dependencies": [
+      "@radix-ui/react-menubar",
+      "lucide-react"
+    ],
+    "registryDependencies": []
+  },
+  {
     "name": "native-select",
     "title": "Native Select",
     "description": "A styled native select — zero-JS and great on mobile — with a chevron.",
     "category": "input",
     "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": []
+  },
+  {
+    "name": "navigation-menu",
+    "title": "Navigation Menu",
+    "description": "A site navigation menu with animated dropdown panels and an optional viewport.",
+    "category": "navigation",
+    "dependencies": [
+      "@radix-ui/react-navigation-menu",
+      "class-variance-authority",
       "lucide-react"
     ],
     "registryDependencies": []
@@ -625,6 +648,16 @@
     "category": "input",
     "dependencies": [
       "@radix-ui/react-slider"
+    ],
+    "registryDependencies": []
+  },
+  {
+    "name": "sonner",
+    "title": "Sonner",
+    "description": "An opinionated toast notification system — call toast() from anywhere, theme-aware.",
+    "category": "feedback",
+    "dependencies": [
+      "sonner"
     ],
     "registryDependencies": []
   },

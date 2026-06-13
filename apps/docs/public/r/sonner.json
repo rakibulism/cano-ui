@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sonner",
+  "type": "registry:component",
+  "title": "Sonner",
+  "description": "An opinionated toast notification system — call toast() from anywhere, theme-aware.",
+  "category": "feedback",
+  "dependencies": [
+    "sonner"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "components/ui/sonner.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { Toaster as Sonner, type ToasterProps } from \"sonner\"\n\n/**\n * Toast notifications, powered by sonner. Mount <Toaster /> once near the root\n * of your app, then call `toast(...)` from anywhere. Follows the active theme\n * by watching the `dark` class on <html>.\n */\nfunction Toaster(props: ToasterProps) {\n  const [theme, setTheme] = React.useState<\"light\" | \"dark\">(\"light\")\n\n  React.useEffect(() => {\n    const root = document.documentElement\n    const update = () =>\n      setTheme(root.classList.contains(\"dark\") ? \"dark\" : \"light\")\n    update()\n    const observer = new MutationObserver(update)\n    observer.observe(root, { attributes: true, attributeFilter: [\"class\"] })\n    return () => observer.disconnect()\n  }, [])\n\n  return (\n    <Sonner\n      theme={theme}\n      className=\"toaster group\"\n      style={\n        {\n          \"--normal-bg\": \"var(--popover)\",\n          \"--normal-text\": \"var(--popover-foreground)\",\n          \"--normal-border\": \"var(--border)\",\n        } as React.CSSProperties\n      }\n      {...props}\n    />\n  )\n}\n\nexport { Toaster }\n",
+      "type": "registry:component"
+    }
+  ]
+}

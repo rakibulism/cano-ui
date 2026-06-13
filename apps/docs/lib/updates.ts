@@ -17,6 +17,13 @@ export interface Update {
 
 export const UPDATES: Update[] = [
   {
+    id: 12,
+    date: "June 13, 2026",
+    type: "component",
+    title: "Toasts & menus",
+    description: "Added sonner, menubar, and navigation-menu (batch 3).",
+  },
+  {
     id: 11,
     date: "June 13, 2026",
     type: "component",

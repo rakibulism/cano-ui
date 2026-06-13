@@ -1,0 +1,15 @@
+{
+  "name": "navigation-menu",
+  "title": "Navigation Menu",
+  "description": "A site navigation menu with animated dropdown panels and an optional viewport.",
+  "category": "navigation",
+  "dependencies": [
+    "@radix-ui/react-navigation-menu",
+    "class-variance-authority",
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "files": [
+    "registry/ui/navigation-menu.tsx"
+  ]
+}

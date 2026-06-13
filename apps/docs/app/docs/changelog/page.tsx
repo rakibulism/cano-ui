@@ -17,6 +17,14 @@ interface Release {
 
 const RELEASES: Release[] = [
   {
+    version: "0.1.10",
+    date: "June 13, 2026",
+    tag: "Components",
+    changes: [
+      "More standard primitives (batch 3): sonner (toasts), menubar, and navigation-menu.",
+    ],
+  },
+  {
     version: "0.1.9",
     date: "June 13, 2026",
     tag: "Components",

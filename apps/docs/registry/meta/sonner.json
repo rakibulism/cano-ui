@@ -1,0 +1,13 @@
+{
+  "name": "sonner",
+  "title": "Sonner",
+  "description": "An opinionated toast notification system \u2014 call toast() from anywhere, theme-aware.",
+  "category": "feedback",
+  "dependencies": [
+    "sonner"
+  ],
+  "registryDependencies": [],
+  "files": [
+    "registry/ui/sonner.tsx"
+  ]
+}

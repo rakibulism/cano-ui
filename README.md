@@ -46,13 +46,13 @@ Because every item is shadcn registry-item compatible, this also works:
 npx shadcn add https://cano-ui.vercel.app/r/data-table-pro.json
 ```
 
-## Components (59 and counting)
+## Components (62 and counting)
 
 | Category | Components |
 |---|---|
 | Layout | App Shell, Settings Layout, Kanban Board, Drawer, Bottom Sheet, Accordion, Collapsible, Aspect Ratio, Scroll Area |
 | Data | Data Table Pro, Team Members Table, Activity Feed, Invoice Table, API Key Manager |
-| Navigation | Command Palette, Search Results, Pagination Bar, Breadcrumb, Context Menu |
+| Navigation | Command Palette, Search Results, Pagination Bar, Breadcrumb, Context Menu, Menubar, Navigation Menu |
 | Input | Combobox Filters, Date Range Picker, File Dropzone, Button Pro, Button Group, Slider Field, Search Bar, Kbd, Input Field, Input Group, Number Input, OTP Input, Card Payment Input, Country Input, Phone Number Input, Language Search, Toggle, Toggle Group, Radio Group, Native Select |
 | Flow | Onboarding Stepper |
 | Auth | Auth Forms |
@@ -60,7 +60,7 @@ npx shadcn add https://cano-ui.vercel.app/r/data-table-pro.json
 | Data viz | Chart Cards |
 | Marketing | Pricing Cards, Announcement Banner, Testimonial Cards |
 | Profile | Account Card |
-| Feedback | Empty State, Error Page, Notification Center, Feedback Dialog, Rich Tooltip, Progress Bar, Alert, Spinner, Alert Dialog, Hover Card |
+| Feedback | Empty State, Error Page, Notification Center, Feedback Dialog, Rich Tooltip, Progress Bar, Alert, Spinner, Alert Dialog, Hover Card, Sonner |
 
 Browse them all with live previews at [cano-ui.vercel.app](https://cano-ui.vercel.app).
 
