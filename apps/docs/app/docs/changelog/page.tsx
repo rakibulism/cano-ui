@@ -17,6 +17,15 @@ interface Release {
 
 const RELEASES: Release[] = [
   {
+    version: "0.1.12",
+    date: "June 13, 2026",
+    tag: "Templates",
+    changes: [
+      "Templates wave 1 — 10 new templates: agency, portfolio, e-commerce, startup, corporate, blog, event, and course websites, plus interactive CRM and project-management dashboards.",
+      "Docs sidebar categories are now collapsible, with an “All components” group linking to every component.",
+    ],
+  },
+  {
     version: "0.1.11",
     date: "June 13, 2026",
     tag: "Templates",

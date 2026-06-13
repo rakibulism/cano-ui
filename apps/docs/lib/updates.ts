@@ -17,6 +17,22 @@ export interface Update {
 
 export const UPDATES: Update[] = [
   {
+    id: 16,
+    date: "June 13, 2026",
+    type: "feature",
+    title: "10 new templates",
+    description:
+      "Wave 1 of the templates gallery — 8 website templates and 2 interactive SaaS dashboards (CRM, project management).",
+  },
+  {
+    id: 15,
+    date: "June 13, 2026",
+    type: "docs",
+    title: "Collapsible docs sidebar",
+    description:
+      "Collapse any docs category, and expand “All components” to jump to any component from the sidebar.",
+  },
+  {
     id: 14,
     date: "June 13, 2026",
     type: "feature",
