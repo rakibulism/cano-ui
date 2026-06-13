@@ -21,9 +21,10 @@ export const viewport: Viewport = {
   ],
 }
 
-// Applies the OS color scheme to <html> before first paint (no flash) and
-// keeps it in sync if the device theme changes while the page is open.
-const themeScript = `(function(){try{var m=window.matchMedia("(prefers-color-scheme: dark)");var a=function(d){document.documentElement.classList.toggle("dark",d)};a(m.matches);m.addEventListener("change",function(e){a(e.matches)})}catch(e){}})();`
+// Applies the saved theme (or the OS preference, the default) to <html>
+// before first paint so there's no flash, and tracks live OS changes while
+// the page follows the system.
+const themeScript = `(function(){try{var m=window.matchMedia("(prefers-color-scheme: dark)");var a=function(){var t=localStorage.getItem("theme")||"system";document.documentElement.classList.toggle("dark",t==="dark"||(t==="system"&&m.matches))};a();m.addEventListener("change",a)}catch(e){}})();`
 
 export default function RootLayout({
   children,

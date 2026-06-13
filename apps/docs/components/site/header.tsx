@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation"
 
 import { cn } from "@/lib/utils"
 import { Logo } from "@/components/site/logo"
+import { ThemeToggle } from "@/components/site/theme-toggle"
 
 const NAV: {
   href: string
@@ -71,14 +72,17 @@ export function SiteHeader() {
             })}
           </nav>
         </div>
-        <a
-          href="https://github.com/rakibulism/cano-ui"
-          target="_blank"
-          rel="noreferrer"
-          className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-        >
-          GitHub
-        </a>
+        <div className="flex items-center gap-1 sm:gap-2">
+          <a
+            href="https://github.com/rakibulism/cano-ui"
+            target="_blank"
+            rel="noreferrer"
+            className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+          >
+            GitHub
+          </a>
+          <ThemeToggle />
+        </div>
       </div>
     </header>
   )
