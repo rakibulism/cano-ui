@@ -1,6 +1,6 @@
 {
   "name": "cano-ui",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "Add design-led, shadcn-compatible components to your project.",
   "license": "MIT",
   "type": "module",
