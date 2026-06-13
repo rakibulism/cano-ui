@@ -18,6 +18,16 @@ interface Release {
 
 const RELEASES: Release[] = [
   {
+    version: "0.1.23",
+    date: "June 14, 2026",
+    time: "1:15 AM",
+    tag: "Templates",
+    changes: [
+      "Templates wave 10 — 24 more templates (now 211 total): more interactive SaaS products including a team wiki, digital asset manager, AI video generator & chatbot builder, a realtime dashboard, renewals tracker, project portfolio, and expense approvals.",
+      "More websites too: founder story, book-a-demo, design & personal-finance blogs, cooking class, exam prep, web-design & content studios, game-developer & musician portfolios, a digital bank, biotech company, virtual summit, expo/trade show, bookstore, and an enterprise page.",
+    ],
+  },
+  {
     version: "0.1.22",
     date: "June 14, 2026",
     time: "12:40 AM",
