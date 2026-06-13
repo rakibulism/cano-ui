@@ -18,6 +18,16 @@ interface Release {
 
 const RELEASES: Release[] = [
   {
+    version: "0.1.28",
+    date: "June 14, 2026",
+    time: "4:20 AM",
+    tag: "Templates",
+    changes: [
+      "Templates wave 15 — the final 13 templates bring the gallery to 320, with every one of the 16 categories at exactly 20: outdoor-gear & wine stores, a free-tools hub, an open-source project page, a video-meeting app, growth dashboard, AI avatar studio, a quote builder, work-intake queue, bank reconciliation, a join-us hiring page, a webcomic, and a masterclass.",
+      "Milestone: the templates program is complete — 320 production-grade templates (10 website categories + 6 interactive SaaS categories, 20 each), every SaaS product wired up with real state and mock data.",
+    ],
+  },
+  {
     version: "0.1.27",
     date: "June 14, 2026",
     time: "3:45 AM",
