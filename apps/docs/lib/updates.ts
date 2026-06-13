@@ -17,6 +17,14 @@ export interface Update {
 
 export const UPDATES: Update[] = [
   {
+    id: 9,
+    date: "June 13, 2026",
+    type: "feature",
+    title: "“What’s new” highlight",
+    description:
+      "On your first visit of a session with unread updates, a callout under the bell surfaces what changed.",
+  },
+  {
     id: 8,
     date: "June 13, 2026",
     type: "feature",
