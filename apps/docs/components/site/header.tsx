@@ -4,6 +4,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 
 import { cn } from "@/lib/utils"
+import { Logo } from "@/components/site/logo"
 
 const NAV: {
   href: string
@@ -37,9 +38,10 @@ export function SiteHeader() {
         <div className="flex items-center gap-7">
           <Link
             href="/"
-            className="text-base font-semibold tracking-tight"
+            className="flex items-center gap-2 text-base font-semibold tracking-tight"
             aria-label="cano home"
           >
+            <Logo className="size-6" />
             cano
           </Link>
           <nav

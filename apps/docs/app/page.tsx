@@ -3,6 +3,7 @@ import { ArrowRight, Terminal } from "lucide-react"
 import { SiteHeader } from "@/components/site/header"
 import { CopyButton } from "@/components/site/copy-button"
 import { CliTerminal } from "@/components/site/cli-terminal"
+import { Logo } from "@/components/site/logo"
 import { getRegistryItems } from "@/lib/registry"
 
 const FLAGSHIPS = [
@@ -157,7 +158,10 @@ export default function HomePage() {
       </main>
       <footer className="border-t">
         <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-4 px-6 py-8 text-sm text-muted-foreground">
-          <span>MIT licensed. Built on shadcn/ui, Radix, and Tailwind.</span>
+          <span className="flex items-center gap-2">
+            <Logo className="size-5" />
+            MIT licensed. Built on shadcn/ui, Radix, and Tailwind.
+          </span>
           <a
             href="https://github.com/rakibulism/cano-ui"
             target="_blank"

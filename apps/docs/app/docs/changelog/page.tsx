@@ -24,6 +24,8 @@ const RELEASES: Release[] = [
       "Announced the Cano CLI — a full-screen terminal app — across the site, with a homepage banner and a dedicated section.",
       "Added a documentation section at /docs with a left sidebar, prev/next pager, and pages for Introduction, Installation, Using components, and the CLI.",
       "Reworked the site header into real navigation (Docs, Components, CLI, GitHub) with active-route highlighting.",
+      "Added a category sidebar with scroll-spy to the Components page, and this Changelog.",
+      "Added the cano logo mark across the header and footer, and as the favicon.",
     ],
   },
   {
