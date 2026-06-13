@@ -90,7 +90,7 @@ export function UpdatesBell() {
     id: String(u.id),
     title: u.title,
     description: u.description,
-    timestamp: u.date,
+    timestamp: `${u.date} · ${u.time}`,
     read: u.id <= seenId,
     icon: TYPE_ICON[u.type],
   }))

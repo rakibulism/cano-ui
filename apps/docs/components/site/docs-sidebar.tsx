@@ -100,11 +100,7 @@ function CollapsibleGroup({
   )
 }
 
-export function DocsSidebar({
-  components = [],
-}: {
-  components?: { name: string; title: string }[]
-}) {
+export function DocsSidebar() {
   const pathname = usePathname()
 
   const linkClass = (active: boolean) =>
@@ -134,31 +130,6 @@ export function DocsSidebar({
           </ul>
         </CollapsibleGroup>
       ))}
-
-      {components.length > 0 ? (
-        <CollapsibleGroup
-          title="All components"
-          count={components.length}
-          defaultOpen={false}
-        >
-          <ul className="flex flex-col gap-0.5">
-            {components.map((c) => {
-              const href = `/components/${c.name}`
-              return (
-                <li key={c.name}>
-                  <Link
-                    href={href}
-                    aria-current={pathname === href ? "page" : undefined}
-                    className={linkClass(pathname === href)}
-                  >
-                    {c.title}
-                  </Link>
-                </li>
-              )
-            })}
-          </ul>
-        </CollapsibleGroup>
-      ) : null}
     </nav>
   )
 }

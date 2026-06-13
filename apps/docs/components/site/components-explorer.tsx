@@ -2,6 +2,7 @@
 
 import * as React from "react"
 import Link from "next/link"
+import { ChevronDown } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import type { RegistryMeta } from "@/lib/registry"
@@ -22,6 +23,8 @@ const CATEGORY_ORDER = [
   "feedback",
 ]
 
+const STORAGE_KEY = "components-collapsed"
+
 function groupByCategory(items: RegistryMeta[]) {
   const groups = new Map<string, RegistryMeta[]>()
   for (const item of items) {
@@ -38,7 +41,27 @@ function groupByCategory(items: RegistryMeta[]) {
 export function ComponentsExplorer({ items }: { items: RegistryMeta[] }) {
   const [query, setQuery] = React.useState("")
   const [active, setActive] = React.useState<string | null>(null)
+  const [collapsed, setCollapsed] = React.useState<Set<string>>(new Set())
   const q = query.trim().toLowerCase()
+
+  // Hydrate collapsed state from localStorage (after mount, so SSR matches).
+  React.useEffect(() => {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY)
+      if (saved) setCollapsed(new Set(JSON.parse(saved)))
+    } catch {
+      // ignore
+    }
+  }, [])
+
+  function persist(next: Set<string>) {
+    setCollapsed(next)
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify([...next]))
+    } catch {
+      // ignore
+    }
+  }
 
   const filtered = q
     ? items.filter((item) =>
@@ -50,8 +73,27 @@ export function ComponentsExplorer({ items }: { items: RegistryMeta[] }) {
   const groups = groupByCategory(filtered)
   const categoryKey = groups.map(([c]) => c).join(",")
 
-  // Scroll-spy: highlight the category the reader is currently in. Handles
-  // the bottom of the page, where trailing sections can't reach the top.
+  // While searching, force every section open so matches are never hidden.
+  const isOpen = (category: string) => (q ? true : !collapsed.has(category))
+  const allCollapsed =
+    !q && groups.length > 0 && groups.every(([c]) => collapsed.has(c))
+
+  function toggle(category: string) {
+    const next = new Set(collapsed)
+    if (next.has(category)) next.delete(category)
+    else next.add(category)
+    persist(next)
+  }
+
+  function expandAll() {
+    persist(new Set())
+  }
+
+  function collapseAll() {
+    persist(new Set(groups.map(([c]) => c)))
+  }
+
+  // Scroll-spy: highlight the category the reader is currently in.
   React.useEffect(() => {
     const cats = categoryKey ? categoryKey.split(",") : []
     if (cats.length === 0) {
@@ -83,10 +125,18 @@ export function ComponentsExplorer({ items }: { items: RegistryMeta[] }) {
     }
   }, [categoryKey])
 
-  function scrollToCategory(category: string) {
-    document
-      .getElementById(`cat-${category}`)
-      ?.scrollIntoView({ behavior: "smooth", block: "start" })
+  function jumpToCategory(category: string) {
+    // Expand the target first so there's content to scroll to.
+    if (collapsed.has(category)) {
+      const next = new Set(collapsed)
+      next.delete(category)
+      persist(next)
+    }
+    requestAnimationFrame(() =>
+      document
+        .getElementById(`cat-${category}`)
+        ?.scrollIntoView({ behavior: "smooth", block: "start" })
+    )
   }
 
   return (
@@ -102,7 +152,7 @@ export function ComponentsExplorer({ items }: { items: RegistryMeta[] }) {
                 <li key={category}>
                   <button
                     type="button"
-                    onClick={() => scrollToCategory(category)}
+                    onClick={() => jumpToCategory(category)}
                     aria-current={active === category ? "true" : undefined}
                     className={cn(
                       "flex w-full items-center justify-between gap-2 rounded-md px-2 py-1.5 text-left text-sm capitalize transition-colors",
@@ -119,6 +169,23 @@ export function ComponentsExplorer({ items }: { items: RegistryMeta[] }) {
                 </li>
               ))}
             </ul>
+            <div className="mt-2 border-t pt-2">
+              <button
+                type="button"
+                onClick={allCollapsed ? expandAll : collapseAll}
+                disabled={!!q}
+                className="flex w-full items-center justify-between gap-2 rounded-md px-2 py-1.5 text-left text-sm text-muted-foreground transition-colors hover:bg-accent/50 hover:text-foreground disabled:opacity-50"
+              >
+                {allCollapsed ? "Show all components" : "Collapse all"}
+                <ChevronDown
+                  aria-hidden="true"
+                  className={cn(
+                    "size-3.5 shrink-0 transition-transform",
+                    allCollapsed && "-rotate-90"
+                  )}
+                />
+              </button>
+            </div>
           </nav>
         ) : null}
       </aside>
@@ -150,37 +217,57 @@ export function ComponentsExplorer({ items }: { items: RegistryMeta[] }) {
             </p>
           </div>
         ) : (
-          groups.map(([category, group]) => (
-            <section
-              key={category}
-              id={`cat-${category}`}
-              className="mt-12 scroll-mt-20 first:mt-8"
-            >
-              <h2 className="text-sm font-medium uppercase tracking-wide text-muted-foreground">
-                {category.replace("-", " ")}
-              </h2>
-              <ul className="mt-4 grid gap-px overflow-hidden rounded-lg border bg-border sm:grid-cols-2">
-                {group.map((item) => (
-                  <li key={item.name} className="bg-background">
-                    <Link
-                      href={`/components/${item.name}`}
-                      className="block h-full p-5 transition-colors hover:bg-accent/50"
-                    >
-                      <span className="text-sm font-medium">
-                        <SearchHighlight text={item.title} query={query} />
-                      </span>
-                      <p className="mt-1 text-sm text-muted-foreground">
-                        <SearchHighlight
-                          text={item.description}
-                          query={query}
-                        />
-                      </p>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          ))
+          groups.map(([category, group]) => {
+            const open = isOpen(category)
+            return (
+              <section
+                key={category}
+                id={`cat-${category}`}
+                className="mt-10 scroll-mt-20 first:mt-8"
+              >
+                <button
+                  type="button"
+                  onClick={() => toggle(category)}
+                  aria-expanded={open}
+                  className="group flex w-full items-center gap-2 rounded-md py-1 text-sm font-medium uppercase tracking-wide text-muted-foreground transition-colors hover:text-foreground"
+                >
+                  <ChevronDown
+                    aria-hidden="true"
+                    className={cn(
+                      "size-4 shrink-0 transition-transform duration-200",
+                      !open && "-rotate-90"
+                    )}
+                  />
+                  {category.replace("-", " ")}
+                  <span className="tabular-nums text-muted-foreground/60">
+                    {group.length}
+                  </span>
+                </button>
+                {open ? (
+                  <ul className="mt-3 grid gap-px overflow-hidden rounded-lg border bg-border sm:grid-cols-2">
+                    {group.map((item) => (
+                      <li key={item.name} className="bg-background">
+                        <Link
+                          href={`/components/${item.name}`}
+                          className="block h-full p-5 transition-colors hover:bg-accent/50"
+                        >
+                          <span className="text-sm font-medium">
+                            <SearchHighlight text={item.title} query={query} />
+                          </span>
+                          <p className="mt-1 text-sm text-muted-foreground">
+                            <SearchHighlight
+                              text={item.description}
+                              query={query}
+                            />
+                          </p>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
+              </section>
+            )
+          })
         )}
       </div>
     </div>

@@ -11,23 +11,36 @@ export const metadata: Metadata = {
 interface Release {
   version: string
   date: string
+  time: string
   tag?: string
   changes: string[]
 }
 
 const RELEASES: Release[] = [
   {
+    version: "0.1.13",
+    date: "June 13, 2026",
+    time: "6:34 PM",
+    tag: "UX",
+    changes: [
+      "Component categories on the Components page are now collapsible, with a show-all / collapse-all toggle for scanning the whole library at a glance.",
+      "Changelog and Updates now show the time of each change, not just the date.",
+    ],
+  },
+  {
     version: "0.1.12",
     date: "June 13, 2026",
+    time: "6:20 PM",
     tag: "Templates",
     changes: [
       "Templates wave 1 — 10 new templates: agency, portfolio, e-commerce, startup, corporate, blog, event, and course websites, plus interactive CRM and project-management dashboards.",
-      "Docs sidebar categories are now collapsible, with an “All components” group linking to every component.",
+      "Docs sidebar categories are now collapsible.",
     ],
   },
   {
     version: "0.1.11",
     date: "June 13, 2026",
+    time: "6:06 PM",
     tag: "Templates",
     changes: [
       "Launched Templates — a gallery of full pages and interactive SaaS products built from cano components, with filter, sort, search, and full-screen previews.",
@@ -37,6 +50,7 @@ const RELEASES: Release[] = [
   {
     version: "0.1.10",
     date: "June 13, 2026",
+    time: "5:52 PM",
     tag: "Components",
     changes: [
       "More standard primitives (batch 3): sonner (toasts), menubar, and navigation-menu.",
@@ -46,6 +60,7 @@ const RELEASES: Release[] = [
   {
     version: "0.1.9",
     date: "June 13, 2026",
+    time: "5:38 PM",
     tag: "Components",
     changes: [
       "More standard primitives (batch 2): alert-dialog, radio-group, hover-card, context-menu, scroll-area, and native-select.",
@@ -54,6 +69,7 @@ const RELEASES: Release[] = [
   {
     version: "0.1.8",
     date: "June 13, 2026",
+    time: "5:24 PM",
     tag: "Components",
     changes: [
       "Started filling out the standard primitive set: added accordion, collapsible, toggle, toggle-group, alert, breadcrumb, aspect-ratio, and spinner (batch 1).",
@@ -62,6 +78,7 @@ const RELEASES: Release[] = [
   {
     version: "0.1.7",
     date: "June 13, 2026",
+    time: "5:10 PM",
     tag: "Docs",
     changes: [
       "Announced the Cano CLI — a full-screen terminal app — across the site, with a homepage banner and a dedicated section.",
@@ -78,6 +95,7 @@ const RELEASES: Release[] = [
   {
     version: "0.1.6",
     date: "June 13, 2026",
+    time: "4:56 PM",
     tag: "Components",
     changes: [
       "Added country-input — a searchable country combobox with emoji flags and dial codes.",
@@ -88,6 +106,7 @@ const RELEASES: Release[] = [
   {
     version: "0.1.5",
     date: "June 13, 2026",
+    time: "4:42 PM",
     tag: "Components",
     changes: [
       "Added six form components: input-field, input-group, number-input, otp-input, pagination-bar, and card-payment-input.",
@@ -97,6 +116,7 @@ const RELEASES: Release[] = [
   {
     version: "0.1.4",
     date: "June 13, 2026",
+    time: "4:28 PM",
     tag: "Components",
     changes: [
       "Added kbd, search-bar, and search-results.",
@@ -106,6 +126,7 @@ const RELEASES: Release[] = [
   {
     version: "0.1.3",
     date: "June 13, 2026",
+    time: "4:14 PM",
     tag: "Components",
     changes: [
       "Added button-pro, button-group, slider-field, and progress-bar.",
@@ -115,6 +136,7 @@ const RELEASES: Release[] = [
   {
     version: "0.1.2",
     date: "June 12, 2026",
+    time: "4:00 PM",
     tag: "Components",
     changes: [
       "Added eight components across the dashboard and feedback categories, plus drawer, bottom-sheet, and rich-tooltip.",
@@ -125,6 +147,7 @@ const RELEASES: Release[] = [
   {
     version: "0.1.1",
     date: "June 12, 2026",
+    time: "3:46 PM",
     tag: "Launch",
     changes: [
       "First public release: 18 design-led components, the cano-ui CLI, and the docs site.",
@@ -171,7 +194,7 @@ export default function ChangelogPage() {
                 </span>
               ) : null}
               <span className="text-sm text-muted-foreground">
-                {release.date}
+                {release.date} · {release.time}
               </span>
             </div>
             <ul className="!mt-0 flex flex-col gap-2 pl-5">

@@ -63,7 +63,7 @@ export default function UpdatesPage() {
                     </p>
                   ) : null}
                   <time className="mt-0.5 text-xs text-muted-foreground/70">
-                    {update.date}
+                    {update.date} · {update.time}
                   </time>
                 </div>
               </div>

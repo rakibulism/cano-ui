@@ -10,6 +10,7 @@ export interface Update {
   /** Monotonic id — higher is newer. Increment for each new entry. */
   id: number
   date: string
+  time: string
   type: UpdateType
   title: string
   description?: string
@@ -17,8 +18,18 @@ export interface Update {
 
 export const UPDATES: Update[] = [
   {
+    id: 17,
+    date: "June 13, 2026",
+    time: "6:34 PM",
+    type: "feature",
+    title: "Collapsible component categories",
+    description:
+      "Collapse any category on the Components page, or show/collapse them all. Changelog and Updates now show the time too.",
+  },
+  {
     id: 16,
     date: "June 13, 2026",
+    time: "6:20 PM",
     type: "feature",
     title: "10 new templates",
     description:
@@ -27,6 +38,7 @@ export const UPDATES: Update[] = [
   {
     id: 15,
     date: "June 13, 2026",
+    time: "6:06 PM",
     type: "docs",
     title: "Collapsible docs sidebar",
     description:
@@ -35,6 +47,7 @@ export const UPDATES: Update[] = [
   {
     id: 14,
     date: "June 13, 2026",
+    time: "5:52 PM",
     type: "feature",
     title: "Templates",
     description:
@@ -43,6 +56,7 @@ export const UPDATES: Update[] = [
   {
     id: 13,
     date: "June 13, 2026",
+    time: "5:38 PM",
     type: "feature",
     title: "Update notifications",
     description:
@@ -51,6 +65,7 @@ export const UPDATES: Update[] = [
   {
     id: 12,
     date: "June 13, 2026",
+    time: "5:24 PM",
     type: "component",
     title: "Toasts & menus",
     description: "Added sonner, menubar, and navigation-menu (batch 3).",
@@ -58,6 +73,7 @@ export const UPDATES: Update[] = [
   {
     id: 11,
     date: "June 13, 2026",
+    time: "5:10 PM",
     type: "component",
     title: "6 more primitives",
     description:
@@ -66,6 +82,7 @@ export const UPDATES: Update[] = [
   {
     id: 10,
     date: "June 13, 2026",
+    time: "4:56 PM",
     type: "component",
     title: "8 new primitives",
     description:
@@ -74,6 +91,7 @@ export const UPDATES: Update[] = [
   {
     id: 9,
     date: "June 13, 2026",
+    time: "4:42 PM",
     type: "feature",
     title: "“What’s new” highlight",
     description:
@@ -82,6 +100,7 @@ export const UPDATES: Update[] = [
   {
     id: 8,
     date: "June 13, 2026",
+    time: "4:28 PM",
     type: "feature",
     title: "Updates feed & notifications bell",
     description:
@@ -90,6 +109,7 @@ export const UPDATES: Update[] = [
   {
     id: 7,
     date: "June 13, 2026",
+    time: "4:14 PM",
     type: "feature",
     title: "Light / Dark / System theme toggle",
     description:
@@ -98,6 +118,7 @@ export const UPDATES: Update[] = [
   {
     id: 6,
     date: "June 13, 2026",
+    time: "4:00 PM",
     type: "chore",
     title: "Dedicated favicon",
     description: "The site favicon is now the cano mark on a rounded plate.",
@@ -105,6 +126,7 @@ export const UPDATES: Update[] = [
   {
     id: 5,
     date: "June 13, 2026",
+    time: "3:46 PM",
     type: "feature",
     title: "Device-following dark mode",
     description:
@@ -113,6 +135,7 @@ export const UPDATES: Update[] = [
   {
     id: 4,
     date: "June 13, 2026",
+    time: "3:32 PM",
     type: "docs",
     title: "Logo across the site",
     description: "Added the cano logo mark to the header and footer.",
@@ -120,6 +143,7 @@ export const UPDATES: Update[] = [
   {
     id: 3,
     date: "June 13, 2026",
+    time: "3:18 PM",
     type: "feature",
     title: "Component search sidebar",
     description:
@@ -128,6 +152,7 @@ export const UPDATES: Update[] = [
   {
     id: 2,
     date: "June 13, 2026",
+    time: "3:04 PM",
     type: "docs",
     title: "Documentation section",
     description:
@@ -136,6 +161,7 @@ export const UPDATES: Update[] = [
   {
     id: 1,
     date: "June 13, 2026",
+    time: "2:50 PM",
     type: "feature",
     title: "Cano CLI announced",
     description:
