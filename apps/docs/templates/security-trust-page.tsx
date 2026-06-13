@@ -145,7 +145,7 @@ export default function SecurityTrustPage() {
 
         <section id="compliance" className="mx-auto w-full max-w-6xl px-4 py-20 sm:px-6">
           <div className="max-w-2xl">
-            <h2 className="text-3xl font-semibold tracking-tight">Compliance &amp; certifications</h2>
+            <h2 className="text-3xl font-semibold tracking-tight">Compliance & certifications</h2>
             <p className="mt-3 text-muted-foreground">
               Independently audited and continuously validated against the standards your
               organization relies on.
@@ -303,7 +303,7 @@ export default function SecurityTrustPage() {
         <div className="mx-auto flex w-full max-w-6xl flex-col items-center justify-between gap-4 px-4 py-8 sm:flex-row sm:px-6">
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
             <ShieldCheck className="h-4 w-4 text-primary" />
-            <span>Aegis — Security &amp; Trust</span>
+            <span>Aegis — Security & Trust</span>
           </div>
           <div className="flex items-center gap-5 text-sm text-muted-foreground">
             <a href="#" className="transition-colors hover:text-foreground">Privacy</a>

@@ -132,7 +132,7 @@ export default function WriterPortfolio() {
         <section className="mx-auto w-full max-w-5xl px-6 pb-20 pt-20 md:pt-28">
           <div className="mx-auto max-w-3xl text-center">
             <Badge variant="secondary" className="mb-6 rounded-full px-3 py-1 text-xs font-normal">
-              Journalist &amp; Essayist
+              Journalist & Essayist
             </Badge>
             <h1 className="font-serif text-4xl leading-[1.1] tracking-tight md:text-6xl">
               I write about the quiet places where people and change collide.
@@ -173,7 +173,7 @@ export default function WriterPortfolio() {
                   Selected work
                 </div>
                 <h2 className="mt-2 font-serif text-3xl tracking-tight md:text-4xl">
-                  Articles &amp; essays
+                  Articles & essays
                 </h2>
               </div>
               <a
@@ -255,7 +255,7 @@ export default function WriterPortfolio() {
 
             <div>
               <div className="rounded-2xl border bg-card p-6">
-                <h3 className="text-sm font-medium">Beats &amp; topics</h3>
+                <h3 className="text-sm font-medium">Beats & topics</h3>
                 <p className="mt-1 text-sm text-muted-foreground">
                   Subjects I report on most often.
                 </p>
@@ -288,7 +288,7 @@ export default function WriterPortfolio() {
               Recognition
             </div>
             <h2 className="mt-2 font-serif text-3xl tracking-tight md:text-4xl">
-              Awards &amp; honors
+              Awards & honors
             </h2>
             <div className="mt-10 grid gap-px overflow-hidden rounded-2xl border bg-border sm:grid-cols-2">
               {AWARDS.map((award) => (

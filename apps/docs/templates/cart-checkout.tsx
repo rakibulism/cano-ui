@@ -382,7 +382,7 @@ export default function CartCheckout() {
                   </p>
                   <p className="flex items-center gap-2">
                     <CreditCard className="h-3.5 w-3.5" />
-                    Visa, Mastercard, Amex &amp; Apple Pay accepted
+                    Visa, Mastercard, Amex & Apple Pay accepted
                   </p>
                 </div>
               </CardContent>

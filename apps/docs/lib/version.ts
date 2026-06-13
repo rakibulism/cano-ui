@@ -4,4 +4,4 @@
  * value from the live deployment. When they differ, a new version has shipped
  * and the UpdateNotifier prompts the visitor to reload.
  */
-export const SITE_VERSION = "0.1.16"
+export const SITE_VERSION = "0.1.19"

@@ -564,9 +564,9 @@ export default function MarketingAgencyPage() {
               <div>
                 <p className="text-sm font-semibold">Services</p>
                 <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
-                  <li>SEO &amp; Organic</li>
+                  <li>SEO & Organic</li>
                   <li>Paid Media</li>
-                  <li>Content &amp; Brand</li>
+                  <li>Content & Brand</li>
                 </ul>
               </div>
               <div>

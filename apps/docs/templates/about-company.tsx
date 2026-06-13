@@ -274,7 +274,7 @@ export default function AboutCompanyPage() {
               </Avatar>
               <div className="text-left">
                 <p className="text-sm font-semibold">Lena Okonkwo</p>
-                <p className="text-sm text-muted-foreground">Co-founder &amp; CEO</p>
+                <p className="text-sm text-muted-foreground">Co-founder & CEO</p>
               </div>
             </div>
           </div>
@@ -381,7 +381,7 @@ export default function AboutCompanyPage() {
                   </p>
                   <div className="mt-5 flex items-center gap-2 text-sm text-muted-foreground">
                     <MapPin className="h-4 w-4" aria-hidden="true" />
-                    Remote-first, with hubs in Lisbon, Austin &amp; Singapore
+                    Remote-first, with hubs in Lisbon, Austin & Singapore
                   </div>
                 </div>
                 <div className="flex shrink-0 flex-col gap-3 sm:flex-row">

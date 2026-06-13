@@ -149,7 +149,7 @@ export default function ConsultingFirmPage() {
             <span className="flex size-8 items-center justify-center rounded-md bg-primary text-primary-foreground">
               <Compass className="size-5" />
             </span>
-            <span className="text-lg">Halsted &amp; Reed</span>
+            <span className="text-lg">Halsted & Reed</span>
           </a>
 
           <nav className="hidden items-center gap-7 md:flex" aria-label="Primary">
@@ -271,7 +271,7 @@ export default function ConsultingFirmPage() {
                   ))}
                   <Separator />
                   <div className="rounded-lg bg-muted/30 p-4 text-sm text-muted-foreground">
-                    “Halsted &amp; Reed reframed the problem and gave us the conviction
+                    “Halsted & Reed reframed the problem and gave us the conviction
                     to act. The numbers followed.”
                     <div className="mt-3 font-medium text-foreground">
                       CFO, FTSE 100 retailer
@@ -566,7 +566,7 @@ export default function ConsultingFirmPage() {
                 <span className="flex size-8 items-center justify-center rounded-md bg-primary text-primary-foreground">
                   <Compass className="size-5" />
                 </span>
-                <span className="text-lg">Halsted &amp; Reed</span>
+                <span className="text-lg">Halsted & Reed</span>
               </a>
               <p className="mt-4 max-w-xs text-sm text-muted-foreground">
                 A global advisory firm helping leaders make decisions that hold up
@@ -600,7 +600,7 @@ export default function ConsultingFirmPage() {
           <Separator className="my-8" />
 
           <div className="flex flex-col items-center justify-between gap-4 text-sm text-muted-foreground sm:flex-row">
-            <p>© 2024 Halsted &amp; Reed LLP. All rights reserved.</p>
+            <p>© 2024 Halsted & Reed LLP. All rights reserved.</p>
             <p>Offices in New York · London · Singapore · Dubai</p>
           </div>
         </div>

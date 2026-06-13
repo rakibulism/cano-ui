@@ -308,7 +308,7 @@ export default function ArchitectPortfolio() {
             <Award className="size-5 text-primary" />
             <p className="text-xs uppercase tracking-[0.25em] text-muted-foreground">Recognition</p>
           </div>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">Awards &amp; honors</h2>
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">Awards & honors</h2>
           <ul className="mt-10 divide-y divide-border border-y">
             {AWARDS.map((a) => (
               <li

@@ -154,7 +154,7 @@ export default function SubscriptionBoxTemplate() {
             <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
               <Package className="h-4 w-4" />
             </span>
-            <span className="text-lg tracking-tight">Crate &amp; Crumb</span>
+            <span className="text-lg tracking-tight">Crate & Crumb</span>
           </a>
           <nav className="hidden items-center gap-6 text-sm text-muted-foreground md:flex">
             <a href="#how" className="transition-colors hover:text-foreground">How it works</a>
@@ -483,7 +483,7 @@ export default function SubscriptionBoxTemplate() {
                 <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
                   <Package className="h-4 w-4" />
                 </span>
-                Crate &amp; Crumb
+                Crate & Crumb
               </div>
               <p className="mt-3 text-sm text-muted-foreground">
                 Small-batch treats from independent makers, delivered to your door on your schedule.
@@ -523,7 +523,7 @@ export default function SubscriptionBoxTemplate() {
           </div>
           <Separator className="my-8" />
           <div className="flex flex-col items-center justify-between gap-3 text-sm text-muted-foreground sm:flex-row">
-            <p>© 2026 Crate &amp; Crumb. All rights reserved.</p>
+            <p>© 2026 Crate & Crumb. All rights reserved.</p>
             <div className="flex gap-4">
               <a href="#" className="hover:text-foreground">Privacy</a>
               <a href="#" className="hover:text-foreground">Terms</a>

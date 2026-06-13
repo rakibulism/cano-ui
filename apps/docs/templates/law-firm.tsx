@@ -178,7 +178,7 @@ export default function LawFirm() {
             <span className="flex h-9 w-9 items-center justify-center rounded-sm bg-primary text-primary-foreground">
               <Scale className="h-4 w-4" />
             </span>
-            Whitfield &amp; Pierce
+            Whitfield & Pierce
           </a>
           <div className="hidden items-center gap-8 lg:flex">
             {NAV_LINKS.map((link) => (
@@ -243,7 +243,7 @@ export default function LawFirm() {
                 Trusted counsel when the stakes are highest.
               </h1>
               <p className="mt-6 max-w-xl text-lg text-muted-foreground">
-                For over four decades, Whitfield &amp; Pierce has represented
+                For over four decades, Whitfield & Pierce has represented
                 individuals and businesses with discretion, rigor, and an
                 unwavering commitment to results.
               </p>
@@ -610,7 +610,7 @@ export default function LawFirm() {
                 <span className="flex h-9 w-9 items-center justify-center rounded-sm bg-primary text-primary-foreground">
                   <Scale className="h-4 w-4" />
                 </span>
-                Whitfield &amp; Pierce
+                Whitfield & Pierce
               </a>
               <p className="mt-4 max-w-xs text-sm text-muted-foreground">
                 A full-service law firm providing principled, results-driven
@@ -663,7 +663,7 @@ export default function LawFirm() {
           </div>
           <Separator className="my-8" />
           <div className="flex flex-col items-center justify-between gap-4 text-sm text-muted-foreground sm:flex-row">
-            <p>© 2026 Whitfield &amp; Pierce LLP. Attorney advertising.</p>
+            <p>© 2026 Whitfield & Pierce LLP. Attorney advertising.</p>
             <div className="flex gap-6">
               <a href="#" className="hover:text-foreground">
                 Privacy

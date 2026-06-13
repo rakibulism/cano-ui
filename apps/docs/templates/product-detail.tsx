@@ -330,14 +330,14 @@ export default function ProductDetail() {
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="materials">
-                <AccordionTrigger>Materials &amp; care</AccordionTrigger>
+                <AccordionTrigger>Materials & care</AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
                   Upper made from 60% recycled polyester. Spot clean with cold water
                   and a soft brush. Air dry away from direct heat. Do not machine wash.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="shipping">
-                <AccordionTrigger>Shipping &amp; returns</AccordionTrigger>
+                <AccordionTrigger>Shipping & returns</AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
                   Free standard shipping on orders over $75. Express options available
                   at checkout. Unworn items can be returned within 60 days for a full

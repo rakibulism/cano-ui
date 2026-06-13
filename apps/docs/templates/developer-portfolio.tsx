@@ -327,7 +327,7 @@ export default function DeveloperPortfolio() {
         <section id="stack" className="border-b bg-muted/30">
           <div className="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6">
             <div className="mb-8">
-              <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">Skills &amp; stack</h2>
+              <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">Skills & stack</h2>
               <p className="mt-2 text-muted-foreground">The tools I reach for, grouped by where they live.</p>
             </div>
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

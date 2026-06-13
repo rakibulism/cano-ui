@@ -115,7 +115,7 @@ export default function SubscriptionsBilling() {
               <CreditCard className="h-5 w-5" />
             </div>
             <div>
-              <p className="text-sm font-semibold leading-none">Billing &amp; Plans</p>
+              <p className="text-sm font-semibold leading-none">Billing & Plans</p>
               <p className="text-xs text-muted-foreground">Acme Workspace</p>
             </div>
           </div>
