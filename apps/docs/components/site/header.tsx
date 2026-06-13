@@ -25,6 +25,11 @@ const NAV: {
     match: (p) => p.startsWith("/components"),
   },
   {
+    href: "/templates",
+    label: "Templates",
+    match: (p) => p.startsWith("/templates"),
+  },
+  {
     href: "/docs/cli",
     label: "CLI",
     match: (p) => p === "/docs/cli",

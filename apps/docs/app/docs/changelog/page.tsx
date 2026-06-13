@@ -17,6 +17,15 @@ interface Release {
 
 const RELEASES: Release[] = [
   {
+    version: "0.1.11",
+    date: "June 13, 2026",
+    tag: "Templates",
+    changes: [
+      "Launched Templates — a gallery of full pages and interactive SaaS products built from cano components, with filter, sort, search, and full-screen previews.",
+      "Seeded with a SaaS landing page (website) and an interactive analytics dashboard (SaaS product); many more rolling out.",
+    ],
+  },
+  {
     version: "0.1.10",
     date: "June 13, 2026",
     tag: "Components",

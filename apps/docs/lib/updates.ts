@@ -17,6 +17,14 @@ export interface Update {
 
 export const UPDATES: Update[] = [
   {
+    id: 14,
+    date: "June 13, 2026",
+    type: "feature",
+    title: "Templates",
+    description:
+      "Browse full websites and interactive SaaS products built from cano components — filter, sort, search, and preview full-screen.",
+  },
+  {
     id: 13,
     date: "June 13, 2026",
     type: "feature",
