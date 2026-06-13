@@ -6,6 +6,8 @@ The CLI for [cano](https://github.com/rakibulism/cano-ui) — design-led, shadcn
 npx cano-ui add data-table-pro
 ```
 
+> **Prefer an interactive experience?** [`cano-cli`](https://www.npmjs.com/package/cano-cli) is a full-screen terminal app — a guided welcome flow, framework detection, a searchable component picker, and live install progress. Install it with `npm i -g cano-cli`, then run `cano`.
+
 ## Commands
 
 ### `init`

@@ -1,7 +1,8 @@
 import Link from "next/link"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, Terminal } from "lucide-react"
 import { SiteHeader } from "@/components/site/header"
 import { CopyButton } from "@/components/site/copy-button"
+import { CliTerminal } from "@/components/site/cli-terminal"
 import { getRegistryItems } from "@/lib/registry"
 
 const FLAGSHIPS = [
@@ -20,6 +21,25 @@ export default function HomePage() {
     <div className="flex min-h-screen flex-col">
       <SiteHeader />
       <main className="flex-1">
+        <div className="border-b bg-muted/30">
+          <Link
+            href="/docs/cli"
+            className="group mx-auto flex max-w-5xl items-center gap-2 px-6 py-2.5 text-sm"
+          >
+            <span className="inline-flex items-center rounded-full bg-primary px-2 py-0.5 text-xs font-medium text-primary-foreground">
+              New
+            </span>
+            <Terminal className="size-4 text-muted-foreground" aria-hidden="true" />
+            <span className="text-muted-foreground">
+              <span className="font-medium text-foreground">Cano CLI</span> — a
+              full-screen terminal app to install and browse components.
+            </span>
+            <ArrowRight
+              className="size-4 text-muted-foreground transition-transform group-hover:translate-x-0.5"
+              aria-hidden="true"
+            />
+          </Link>
+        </div>
         <section className="mx-auto max-w-5xl px-6 py-24 sm:py-32">
           <h1 className="max-w-2xl text-4xl font-semibold tracking-tight text-balance sm:text-5xl">
             Components for serious products.
@@ -73,6 +93,39 @@ export default function HomePage() {
                 </Link>
               </li>
             </ul>
+          </div>
+        </section>
+
+        <section className="border-t">
+          <div className="mx-auto grid max-w-5xl items-center gap-10 px-6 py-16 lg:grid-cols-2">
+            <div>
+              <span className="inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs font-medium text-muted-foreground">
+                <Terminal className="size-3.5" aria-hidden="true" />
+                Now in your terminal
+              </span>
+              <h2 className="mt-4 text-2xl font-semibold tracking-tight text-balance sm:text-3xl">
+                Install components without leaving the keyboard.
+              </h2>
+              <p className="mt-4 max-w-md text-muted-foreground">
+                The new Cano CLI is a full-screen terminal app — a welcome flow,
+                framework detection, a searchable component picker, and live
+                install progress. Not a script; a product.
+              </p>
+              <div className="mt-6 flex flex-wrap items-center gap-4">
+                <div className="flex items-center gap-3 rounded-lg border bg-muted/50 py-2 pl-4 pr-2 font-mono text-sm">
+                  <span className="select-all">npm i -g cano-cli</span>
+                  <CopyButton value="npm install -g cano-cli" />
+                </div>
+                <Link
+                  href="/docs/cli"
+                  className="inline-flex items-center gap-1.5 text-sm font-medium underline-offset-4 hover:underline"
+                >
+                  Read the CLI docs
+                  <ArrowRight className="size-4" aria-hidden="true" />
+                </Link>
+              </div>
+            </div>
+            <CliTerminal />
           </div>
         </section>
 
