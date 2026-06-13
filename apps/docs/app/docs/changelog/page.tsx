@@ -22,6 +22,7 @@ const RELEASES: Release[] = [
     tag: "Components",
     changes: [
       "More standard primitives (batch 3): sonner (toasts), menubar, and navigation-menu.",
+      "Added an update notifier: when a new version ships, the site offers a one-click reload (or skip).",
     ],
   },
   {
